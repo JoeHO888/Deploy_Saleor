@@ -8,7 +8,7 @@ set -e
 #########################################################################################
 # Get the actual user that logged in
 #########################################################################################
-UN="$(who am i | awk '{print $1}')"
+UN="$(whoami | awk '{print $1}')"
 if [[ "$UN" != "root" ]]; then
         HD="/home/$UN"
 else
@@ -22,11 +22,7 @@ cd $HD
 #########################################################################################
 # Get the operating system
 #########################################################################################
-IN=$(uname -a)
-arrIN=(${IN// / })
-IN2=${arrIN[3]}
-arrIN2=(${IN2//-/ })
-OS=${arrIN2[1]}
+OS="Ubuntu"
 #########################################################################################
 
 
@@ -156,7 +152,7 @@ case "$OS" in
                 sudo apt-get update
                 sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi python3-venv gcc
                 sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
-                sudo apt-get install -y nodejs npm postgresql postgresql-contrib
+                sudo apt-get install -y nodejs npm postgresql postgresql-contrib nginx
                 ;;
 
         Fedora)
@@ -172,7 +168,7 @@ case "$OS" in
                 sudo apt-get update
                 sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi python3-venv gcc
                 sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
-                sudo apt-get install -y nodejs npm postgresql postgresql-contrib
+                sudo apt-get install -y nodejs npm postgresql postgresql-contrib nginx
                 ;;
 
         *)
@@ -214,10 +210,8 @@ else
         fi
 fi
 # Create randomized 2049 byte key file
-sudo echo $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 2048| head -n 1) > /etc/saleor/api_sk
+echo $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 2048| head -n 1) | sudo dd status=none of=/etc/saleor/api_sk
 #########################################################################################
-
-
 
 #########################################################################################
 # Set variables for the password, obfuscation string, and user/database names
@@ -233,8 +227,6 @@ PGSQLUSER="saleor_dbu_$OBFSTR"
 PGSQLUSERPASS=$(cat /dev/urandom | tr -dc 'A-Za-z0-9' | fold -w 128 | head -n 1)
 #########################################################################################
 
-
-
 #########################################################################################
 # Tell the user what's happening
 #########################################################################################
@@ -246,8 +238,6 @@ echo ""
 sleep 2
 #########################################################################################
 
-
-
 #########################################################################################
 # Create a superuser for Saleor
 #########################################################################################
@@ -258,8 +248,6 @@ sudo -i -u postgres psql -c "CREATE DATABASE $PGSQLDBNAME;"
 # TODO - Secure the postgers user account
 #########################################################################################
 
-
-
 #########################################################################################
 # Tell the user what's happening
 #########################################################################################
@@ -269,97 +257,23 @@ sleep 2
 #########################################################################################
 
 
-
 #########################################################################################
 # Collect input from the user to assign required installation parameters
 #########################################################################################
 echo "Please provide details for your Saleor API instillation..."
 echo ""
-# Get the API host domain
-while [ "$HOST" = "" ]
-do
-        echo -n "Enter the API host domain:"
-        read HOST
-done
-# Get an optional custom Static URL
-if [ "$STATIC_URL" = "" ]; then
-        echo -n "Enter a custom Static Files URI (optional):"
-        read STATIC_URL
-        if [ "$STATIC_URL" != "" ]; then
-                STATIC_URL="/$STATIC_URL/"
-        fi
-else
-        STATIC_URL="/$STATIC_URL/"
-fi
-# Get an optional custom media URL
-if [ "$MEDIA_URL" = "" ]; then
-        echo -n "Enter a custom Media Files URI (optional):"
-        read MEDIA_URL
-        if [ "$MEDIA_URL" != "" ]; then
-                MEDIA_URL="/$MEDIA_URL/"
-        fi
-else
-        MEDIA_URL="/$MEDIA_URL/"
-fi
-# Get the Admin's email address
-while [ "$ADMIN_EMAIL" = "" ]
-do
-        echo ""
-        echo -n "Enter the Dashboard admin's email:"
-        read ADMIN_EMAIL
-done
-# Get the Admin's desired password
-while [ "$ADMIN_PASS" = "" ]
-do
-        echo ""
-        echo -n "Enter the Dashboard admin's desired password:"
-        read -s ADMIN_PASS
-done
-#########################################################################################
 
-
-
-#########################################################################################
-# Set default and optional parameters
-#########################################################################################
-if [ "$PGDBHOST" = "" ]; then
-        PGDBHOST="localhost"
-fi
-#
-if [ "$DBPORT" = "" ]; then
-        DBPORT="5432"
-fi
-#
-if [[ "$GQL_PORT" = "" ]]; then
-        GQL_PORT="9000"
-fi
-#
-if [[ "$API_PORT" = "" ]]; then
-        API_PORT="8000"
-fi
-#
-if [ "$APIURI" = "" ]; then
-        APIURI="graphql" 
-fi
-#
-if [ "$vOPT" = "true" ]; then
-        if [ "$VERSION" = "" ]; then
-                VERSION="main"
-        fi
-else
-        VERSION="main"
-fi
-#
-if [ "$STATIC_URL" = "" ]; then
-        STATIC_URL="/static/" 
-fi
-#
-if [ "$MEDIA_URL" = "" ]; then
-        MEDIA_URL="/media/" 
-fi
-#########################################################################################
-
-
+HOST="api.domain.com"
+ADMIN_EMAIL="admin@domain.com"
+ADMIN_PASS="password"
+STATIC_URL="/static/"
+MEDIA_URL="/media/" 
+PGDBHOST="localhost"
+DBPORT="5432"
+GQL_PORT="9000"
+API_PORT="8000"
+APIURI="graphql"
+VERSION="main"
 
 #########################################################################################
 # Open the selected ports for the API and APP
@@ -369,8 +283,6 @@ sudo ufw allow $GQL_PORT
 # Open API port
 sudo ufw allow $API_PORT
 #########################################################################################
-
-
 
 #########################################################################################
 # Create virtual environment directory
@@ -385,7 +297,6 @@ if [ ! -d "$HD/env/saleor" ]; then
         wait
 fi
 #########################################################################################
-
 
 
 #########################################################################################
@@ -405,15 +316,15 @@ echo ""
 # Check if the -v (version) option was used
 if [ "$vOPT" = "true" ]; then
         # Get the Mirumee repo
-        sudo -u $UN git clone https://github.com/mirumee/saleor.git
+        sudo -u $UN git clone https://github.com/JoeHO888/saleor.git
 else
         # Was a repo specified?
         if [ "$REPO" = "mirumee" ]; then
                 # Get the Mirumee repo
-                sudo -u $UN git clone https://github.com/mirumee/saleor.git
+                sudo -u $UN git clone https://github.com/JoeHO888/saleor.git
         else
                 # Get the Mirumee repo
-                sudo -u $UN git clone https://github.com/mirumee/saleor.git
+                sudo -u $UN git clone https://github.com/JoeHO888/saleor.git
 
                 ###### For possible later use ######
                 # Get the forked repo from thewhiterabbit
@@ -453,28 +364,26 @@ echo ""
 sleep 2
 #########################################################################################
 
-
-
 #########################################################################################
 # Replace any parameter slugs in the template files with real paramaters & write them to
 # the production files
 #########################################################################################
 # Replace the settings.py with the production version
-if [ -f "$HD/saleor/saleor/settings.py" ]; then
-        sudo rm $HD/saleor/saleor/settings.py
-fi
-sudo cp $HD/Deploy_Saleor/resources/saleor/3.0.0-settings.py $HD/saleor/saleor/settings.py
+# if [ -f "$HD/saleor/saleor/settings.py" ]; then
+#         sudo rm $HD/saleor/saleor/settings.py
+# fi
+# sudo cp $HD/Deploy_Saleor/resources/saleor/3.0.0-settings.py $HD/saleor/saleor/settings.py
 # Replace the populatedb.py file with the production version
-if [ -f "$HD/saleor/saleor/core/management/commands/populatedb.py" ]; then
-        sudo rm $HD/saleor/saleor/core/management/commands/populatedb.py
-fi
-sudo cp $HD/Deploy_Saleor/resources/saleor/3.0.0-populatedb.py $HD/saleor/saleor/core/management/commands/populatedb.py
+# if [ -f "$HD/saleor/saleor/core/management/commands/populatedb.py" ]; then
+#         sudo rm $HD/saleor/saleor/core/management/commands/populatedb.py
+# fi
+# sudo cp $HD/Deploy_Saleor/resources/saleor/3.0.0-populatedb.py $HD/saleor/saleor/core/management/commands/populatedb.py
 # Replace the test_core.py file with the production version
 #if [ -f "$HD/saleor/saleor/core/tests/test_core.py" ]; then
 #        sudo rm $HD/saleor/saleor/core/tests/test_core.py
 #fi
 #sudo cp $HD/Deploy_Saleor/resources/saleor/test_core.py $HD/saleor/saleor/core/tests/
-wait
+# wait
 # Does an old saleor.service file exist?
 if [ -f "/etc/systemd/system/saleor.service" ]; then
         # Remove the old service file
@@ -484,8 +393,8 @@ fi
 # Was the -v (version) option used or Mirumee repo specified?
 if [ "vOPT" = "true" ] || [ "$REPO" = "mirumee" ]; then
         # Create the saleor service file
-        sudo sed "s/{un}/$UN/
-                  s|{hd}|$HD|g" $HD/Deploy_Saleor/resources/saleor/template.service > /etc/systemd/system/saleor.service
+        sed "s/{un}/$UN/
+                  s|{hd}|$HD|g" $HD/Deploy_Saleor/resources/saleor/template.service  | sudo dd status=none of=/etc/systemd/system/saleor.service 
         wait
         # Does an old server block exist?
         if [ -f "/etc/nginx/sites-available/saleor" ]; then
@@ -493,15 +402,15 @@ if [ "vOPT" = "true" ] || [ "$REPO" = "mirumee" ]; then
                 sudo rm /etc/nginx/sites-available/saleor
         fi
         # Create the saleor server block
-        sudo sed "s|{hd}|$HD|g
+        sed "s|{hd}|$HD|g
                   s/{host}/$HOST/g
                   s|{static}|$STATIC_URL|g
-                  s|{media}|$MEDIA_URL|g" $HD/Deploy_Saleor/resources/saleor/server_block > /etc/nginx/sites-available/saleor
+                  s|{media}|$MEDIA_URL|g" $HD/Deploy_Saleor/resources/saleor/server_block | sudo dd status=none of=/etc/nginx/sites-available/saleor
         wait
 else
         # Create the new service file
-        sudo sed "s/{un}/$UN/
-                  s|{hd}|$HD|g" $HD/Deploy_Saleor/resources/saleor/template.service > /etc/systemd/system/saleor.service
+        sed "s/{un}/$UN/
+                  s|{hd}|$HD|g" $HD/Deploy_Saleor/resources/saleor/template.service  | sudo dd status=none of=/etc/systemd/system/saleor.service 
         wait
         # Does an old server block exist?
         if [ -f "/etc/nginx/sites-available/saleor" ]; then
@@ -509,17 +418,17 @@ else
                 sudo rm /etc/nginx/sites-available/saleor
         fi
         # Create the new server block
-        sudo sed "s|{hd}|$HD|g
+        sed "s|{hd}|$HD|g
                   s/{api_host}/$API_HOST/
                   s/{host}/$HOST/g
                   s|{static}|$STATIC_URL|g
                   s|{media}|$MEDIA_URL|g
-                  s/{api_port}/$API_PORT/" $HD/Deploy_Saleor/resources/saleor/server_block > /etc/nginx/sites-available/saleor
+                  s/{api_port}/$API_PORT/" $HD/Deploy_Saleor/resources/saleor/server_block | sudo dd status=none of=/etc/nginx/sites-available/saleor
         wait
 fi
 # Create the production uwsgi initialization file
-sudo sed "s|{hd}|$HD|g
-          s/{un}/$UN/" $HD/Deploy_Saleor/resources/saleor/template.uwsgi > $HD/saleor/saleor/wsgi/prod.ini
+sed "s|{hd}|$HD|g
+          s/{un}/$UN/" $HD/Deploy_Saleor/resources/saleor/template.uwsgi | sudo dd status=none of=$HD/saleor/saleor/wsgi/prod.ini
 if [ -d "/var/www/$HOST" ]; then
         sudo rm -R /var/www/$HOST
         wait
@@ -532,15 +441,11 @@ sudo mkdir /var/www/$HOST$MEDIA_URL
 # Static directory will be moved into /var/www/$HOST/ after collectstatic is performed
 #########################################################################################
 
-
-
 #########################################################################################
 # Tell the user what's happening
 echo "Creating production deployment packages for Saleor API & GraphQL..."
 echo ""
 #########################################################################################
-
-
 
 #########################################################################################
 # Setup the environment variables for Saleor API
@@ -554,7 +459,7 @@ C_HOSTS="$HOST,$API_HOST,localhost,127.0.0.1"
 A_HOSTS="$HOST,$API_HOST,localhost,127.0.0.1"
 QL_ORIGINS="$HOST,$API_HOST,localhost,127.0.0.1"
 # Write the production .env file from template.env
-sudo sed "s|{dburl}|$DB_URL|
+sed "s|{dburl}|$DB_URL|
           s|{emailurl}|$EMAIL_URL|
           s/{chosts}/$C_HOSTS/
           s/{ahosts}/$A_HOSTS/
@@ -566,13 +471,12 @@ sudo sed "s|{dburl}|$DB_URL|
 wait
 #########################################################################################
 
-
-
 #########################################################################################
 # Copy the uwsgi_params file to /saleor/uwsgi_params
 #########################################################################################
 sudo cp $HD/Deploy_Saleor/resources/saleor/uwsgi_params $HD/saleor/uwsgi_params
 #########################################################################################
+
 
 
 
