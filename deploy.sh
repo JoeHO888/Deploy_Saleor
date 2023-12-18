@@ -150,8 +150,8 @@ sleep 1
 case "$OS" in
         Debian)
                 sudo apt-get update
-                sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi python3-venv gcc
-                sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
+                sudo apt-get install -y build-essential python3.9-dev python3-pip python3-cffi python3.9-venv gcc
+                sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libpq-dev
                 sudo apt-get install -y nodejs npm postgresql postgresql-contrib nginx
                 ;;
 
@@ -166,8 +166,8 @@ case "$OS" in
 
         Ubuntu)
                 sudo apt-get update
-                sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi python3-venv gcc
-                sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
+                sudo apt-get install -y build-essential python3.9-dev python3-pip python3-cffi python3.9-venv gcc
+                sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libpq-dev
                 sudo apt-get install -y nodejs npm postgresql postgresql-contrib nginx
                 ;;
 
@@ -219,12 +219,12 @@ echo $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 2048| head -n 1) | sudo d
 # Generate an 8 byte obfuscation string for the database name & username 
 OBFSTR=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 8| head -n 1)
 # Append the database name for Saleor with the obfuscation string
-PGSQLDBNAME="saleor_db_$OBFSTR"
+PGSQLDBNAME="saleor"
 # Append the database username for Saleor with the obfuscation string
-PGSQLUSER="saleor_dbu_$OBFSTR"
+PGSQLUSER="saleor"
 # Generate a 128 byte password for the Saleor database user
 # TODO: Add special characters once we know which ones won't crash the python script
-PGSQLUSERPASS=$(cat /dev/urandom | tr -dc 'A-Za-z0-9' | fold -w 128 | head -n 1)
+PGSQLUSERPASS="saleor"
 #########################################################################################
 
 #########################################################################################
@@ -242,9 +242,9 @@ sleep 2
 # Create a superuser for Saleor
 #########################################################################################
 # Create the role in the database and assign the generated password
-sudo -i -u postgres psql -c "CREATE ROLE $PGSQLUSER PASSWORD '$PGSQLUSERPASS' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;"
+# sudo -i -u postgres psql -c "CREATE ROLE $PGSQLUSER PASSWORD '$PGSQLUSERPASS' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;"
 # Create the database for Saleor
-sudo -i -u postgres psql -c "CREATE DATABASE $PGSQLDBNAME;"
+# sudo -i -u postgres psql -c "CREATE DATABASE $PGSQLDBNAME;"
 # TODO - Secure the postgers user account
 #########################################################################################
 
@@ -293,7 +293,7 @@ fi
 # Does an old virtual environment for Saleor exist?
 if [ ! -d "$HD/env/saleor" ]; then
         # Create a new virtual environment for Saleor
-        sudo -u $UN python3 -m venv $HD/env/saleor
+        sudo -u $UN python3.9 -m venv $HD/env/saleor
         wait
 fi
 #########################################################################################
@@ -505,7 +505,7 @@ wait
 # Install Django
 pip3 install Django
 wait
-# Create a Temporary directory to generate some files we need
+# Create a Temporary directory to generate some fil es we need
 #sudo -u $UN mkdir $HD/django
 #cd django
 # Create the project folder
@@ -513,14 +513,18 @@ wait
 # Install uwsgi
 pip3 install uwsgi
 wait
+# Install poetry
+pip3 install poetry==1.7.0
+wait
 # Install the project requirements
-pip3 install -r requirements.txt
+poetry install --no-root
 wait
 # Install the decoupler for .env file
 pip3 install python-decouple
 wait
 # Set any secret Environment Variables
-export ADMIN_PASS="$ADMIN_PASS"
+echo $ADMIN_PASS
+export ADMIN_PASS="password"
 # Install the project
 npm install
 wait
@@ -537,9 +541,6 @@ python3 manage.py collectstatic
 wait
 # Build the schema
 npm run build-schema
-wait
-# Build the emails
-npm run build-emails
 wait
 # Exit the virtual environment here? _#_
 deactivate
