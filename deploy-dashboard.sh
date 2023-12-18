@@ -4,7 +4,7 @@ echo "Creating production deployment packages for Saleor Dashboard..."
 echo ""
 #########################################################################################
 
-
+echo "test"
 
 #########################################################################################
 # Collect input from the user to assign required installation parameters
@@ -52,14 +52,14 @@ wait
 API_URL="https://$HOST/$APIURI/"
 # Write the production .env file from template.env
 if [ "$SAME_HOST" = "no" ]; then
-        sudo sed "s|{api_url}|$API_URL|
+        sed "s|{api_url}|$API_URL|
                 s|{app_mount_uri}|$APP_MOUNT_URI|
-                s|{app_host}|$APP_HOST/$APP_MOUNT_URI|" $HD/Deploy_Saleor/resources/saleor-dashboard/template.env > $HD/saleor-dashboard/.env
+                s|{app_host}|$APP_HOST/$APP_MOUNT_URI|" $HD/Deploy_Saleor/resources/saleor-dashboard/template.env | sudo dd status=none of=$HD/saleor-dashboard/.env
         wait
 else
-        sudo sed "s|{api_url}|$API_URL|
+        sed "s|{api_url}|$API_URL|
                 s|{app_mount_uri}|$APP_MOUNT_URI|
-                s|{app_host}|$HOST/$APP_MOUNT_URI|" $HD/Deploy_Saleor/resources/saleor-dashboard/template.env > $HD/saleor-dashboard/.env
+                s|{app_host}|$HOST/$APP_MOUNT_URI|" $HD/Deploy_Saleor/resources/saleor-dashboard/template.env | sudo dd status=none of=$HD/saleor-dashboard/.env
         wait
 fi
 #########################################################################################
@@ -77,13 +77,13 @@ if [ "vOPT" = "true" ] || [ "$VERSION" != "" ]; then
 else
         sudo -u $UN git checkout main
 fi
-# Update npm
-npm install -g npm@latest
 wait
 # Install dependancies
-sudo -u $UN npm i
+npm i
 wait
-sudo -u $UN npm run build
+npm install husky -g
+wait
+npm run build
 wait
 #########################################################################################
 
@@ -101,9 +101,9 @@ if [ "$SAME_HOST" = "no" ]; then
         # Clean the saleor server block
         sudo sed -i "s#{dl}#$DASHBOARD_LOCATION#" /etc/nginx/sites-available/saleor
         # Create the saleor-dashboard server block
-        sudo sed "s|{hd}|$HD|g
+        sed "s|{hd}|$HD|g
                   s/{app_mount_uri}/$APP_MOUNT_URI/g
-                  s/{host}/$APP_HOST/g" $HD/Deploy_Saleor/resources/saleor-dashboard/server_block > /etc/nginx/sites-available/saleor-dashboard
+                  s/{host}/$APP_HOST/g" $HD/Deploy_Saleor/resources/saleor-dashboard/server_block | sudo dd status=none of=/etc/nginx/sites-available/saleor-dashboard
         wait
         sudo chown -R www-data /var/www/$APP_HOST
         echo "Enabling server block and Restarting nginx..."

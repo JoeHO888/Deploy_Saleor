@@ -25,177 +25,6 @@ cd $HD
 OS="Ubuntu"
 #########################################################################################
 
-
-
-#########################################################################################
-# Parse options
-#########################################################################################
-while [ -n "$1" ]; do # while loop starts
-	case "$1" in
-                -name)
-                        DEPLOYED_NAME="$2"
-                        shift
-                        ;;
-
-                -host)
-                        HOST="$2"
-                        shift
-                        ;;
-
-                -dashboard-uri)
-                        APP_MOUNT_URI="$2"
-                        shift
-                        ;;
-
-                -static-url)
-                        STATIC_URL="$2"
-                        shift
-                        ;;
-
-                -media-url)
-                        MEDIA_URL="$2"
-                        shift
-                        ;;
-
-                -admin-email)
-                        ADMIN_EMAIL="$2"
-                        shift
-                        ;;
-
-                -admin-pw)
-                        ADMIN_PASS="$2"
-                        shift
-                        ;;
-
-                -dbhost)
-                        PGDBHOST="$2"
-                        shift
-                        ;;
-
-                -dbport)
-                        DBPORT="$2"
-                        shift
-                        ;;
-
-                -graphql-port)
-                        GQL_PORT="$2"
-                        shift
-                        ;;
-
-                -graphql-uri)
-                        APIURI="$2"
-                        shift
-                        ;;
-
-                -email)
-                        EMAIL="$2"
-                        shift
-                        ;;
-
-                -email-pw)
-                        EMAIL_PW="$2"
-                        shift
-                        ;;
-
-                -email-host)
-                        EMAIL_HOST="$2"
-                        shift
-                        ;;
-
-                -repo)
-                        REPO="$2"
-                        shift
-                        ;;
-
-                -v)
-                        vOPT="true"
-                        VERSION="$2"
-                        shift
-                        ;;
-
-                *)
-                        echo "Option $1 is invalid."
-                        echo "Exiting"
-                        exit 1
-                        ;;
-	esac
-	shift
-done
-#########################################################################################
-
-
-
-#########################################################################################
-# Echo the detected operating system
-#########################################################################################
-echo ""
-echo "$OS detected"
-echo ""
-sleep 3
-#########################################################################################
-
-
-
-#########################################################################################
-# Select/run Operating System specific commands
-#########################################################################################
-# Tested working on Ubuntu Server 20.04
-# Needs testing on the distributions listed below:
-#       Debian
-#       Fedora CoreOS
-#       Kubernetes
-#       SUSE CaaS
-echo "Installing core dependencies..."
-sleep 1
-case "$OS" in
-        Debian)
-                sudo apt-get update
-                sudo apt-get install -y build-essential python3.9-dev python3-pip python3-cffi python3.9-venv gcc
-                sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libpq-dev
-                sudo apt-get install -y nodejs npm postgresql postgresql-contrib nginx
-                ;;
-
-        Fedora)
-                ;;
-
-        Kubernetes)
-                ;;
-
-        SUSE)
-                ;;
-
-        Ubuntu)
-                sudo apt-get update
-                sudo apt-get install -y build-essential python3.9-dev python3-pip python3-cffi python3.9-venv gcc
-                sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libpq-dev
-                sudo apt-get install -y nodejs npm postgresql postgresql-contrib nginx
-                ;;
-
-        *)
-                # Unsupported distribution detected, exit
-                echo "Unsupported Linux distribution detected."
-                echo "Exiting"
-                exit 1
-                ;;
-esac
-#########################################################################################
-
-
-
-#########################################################################################
-# Tell the user what's happening
-#########################################################################################
-echo ""
-echo "Finished installing core dependencies"
-echo ""
-sleep 2
-echo "Setting up security feature details..."
-echo ""
-sleep 2
-#########################################################################################
-
-
-
 #########################################################################################
 # Generate a secret key file
 #########################################################################################
@@ -211,49 +40,6 @@ else
 fi
 # Create randomized 2049 byte key file
 echo $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 2048| head -n 1) | sudo dd status=none of=/etc/saleor/api_sk
-#########################################################################################
-
-#########################################################################################
-# Set variables for the password, obfuscation string, and user/database names
-#########################################################################################
-# Generate an 8 byte obfuscation string for the database name & username 
-OBFSTR=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 8| head -n 1)
-# Append the database name for Saleor with the obfuscation string
-PGSQLDBNAME="saleor"
-# Append the database username for Saleor with the obfuscation string
-PGSQLUSER="saleor"
-# Generate a 128 byte password for the Saleor database user
-# TODO: Add special characters once we know which ones won't crash the python script
-PGSQLUSERPASS="saleor"
-#########################################################################################
-
-#########################################################################################
-# Tell the user what's happening
-#########################################################################################
-echo "Finished setting up security feature details"
-echo ""
-sleep 2
-echo "Creating database..."
-echo ""
-sleep 2
-#########################################################################################
-
-#########################################################################################
-# Create a superuser for Saleor
-#########################################################################################
-# Create the role in the database and assign the generated password
-# sudo -i -u postgres psql -c "CREATE ROLE $PGSQLUSER PASSWORD '$PGSQLUSERPASS' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;"
-# Create the database for Saleor
-# sudo -i -u postgres psql -c "CREATE DATABASE $PGSQLDBNAME;"
-# TODO - Secure the postgers user account
-#########################################################################################
-
-#########################################################################################
-# Tell the user what's happening
-#########################################################################################
-echo "Finished creating database" 
-echo ""
-sleep 2
 #########################################################################################
 
 
@@ -274,6 +60,10 @@ GQL_PORT="9000"
 API_PORT="8000"
 APIURI="graphql"
 VERSION="main"
+
+SAME_HOST="no"
+APP_HOST="dashboard.domain.com"
+APP_MOUNT_URI="app.domain.com"
 
 #########################################################################################
 # Open the selected ports for the API and APP
@@ -297,6 +87,7 @@ if [ ! -d "$HD/env/saleor" ]; then
         wait
 fi
 #########################################################################################
+
 
 
 #########################################################################################
@@ -353,6 +144,7 @@ else
         fi
 fi
 #########################################################################################
+
 
 
 
@@ -477,9 +269,6 @@ wait
 sudo cp $HD/Deploy_Saleor/resources/saleor/uwsgi_params $HD/saleor/uwsgi_params
 #########################################################################################
 
-
-
-
 #########################################################################################
 # Install Saleor for production
 #########################################################################################
@@ -494,11 +283,9 @@ wait
 # Simlink to the prod.ini
 sudo ln -s $HD/saleor/saleor/wsgi/prod.ini $HD/env/saleor/vassals
 wait
+
 # Activate the virtual environment
 source $HD/env/saleor/bin/activate
-# Update npm
-npm install npm@latest
-wait
 # Make sure pip is upgraded
 python3 -m pip install --upgrade pip
 wait
@@ -523,9 +310,10 @@ wait
 pip3 install python-decouple
 wait
 # Set any secret Environment Variables
-echo $ADMIN_PASS
-export ADMIN_PASS="password"
+export ADMIN_PASS="$ADMIN_PASS"
 # Install the project
+source $HD/.nvm/nvm.sh
+nvm use v16.20.2
 npm install
 wait
 # Run an audit to fix any vulnerabilities
@@ -573,7 +361,7 @@ echo ""
 #########################################################################################
 # Call the dashboard deployment script - Disabled until debugged
 #########################################################################################
-source $HD/Deploy_Saleor/deploy-dashboard.sh
+. $HD/Deploy_Saleor/deploy-dashboard.sh
 #########################################################################################
 
 
