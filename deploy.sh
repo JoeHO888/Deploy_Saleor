@@ -199,6 +199,7 @@ if [ "vOPT" = "true" ] || [ "$REPO" = "mirumee" ]; then
                   s|{static}|$STATIC_URL|g
                   s|{media}|$MEDIA_URL|g" $HD/Deploy_Saleor/resources/saleor/server_block | sudo dd status=none of=/etc/nginx/sites-available/saleor
         wait
+        sudo ln -s /etc/nginx/sites-available/saleor /etc/nginx/sites-enabled/        
 else
         # Create the new service file
         sed "s/{un}/$UN/
@@ -217,6 +218,7 @@ else
                   s|{media}|$MEDIA_URL|g
                   s/{api_port}/$API_PORT/" $HD/Deploy_Saleor/resources/saleor/server_block | sudo dd status=none of=/etc/nginx/sites-available/saleor
         wait
+        sudo ln -s /etc/nginx/sites-available/saleor /etc/nginx/sites-enabled/
 fi
 # Create the production uwsgi initialization file
 sed "s|{hd}|$HD|g
