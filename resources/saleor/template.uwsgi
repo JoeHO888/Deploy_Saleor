@@ -18,11 +18,12 @@ disable-write-exception = true
 # Modifications
 socket                  = {hd}/run/saleor.sock
 # socket permissions
-chown-socket            = {un}:www-data
+chown-socket            = www-data:www-data
 chmod-socket            = 660
 strict                  = true
 need-app                = true
-uid                     = {un}
+uid                     = www-data
+gid                     = www-data
 # full path to python virtual env
 home                    = {hd}/env/saleor
 # full path to Django project's root directory

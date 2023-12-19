@@ -6,6 +6,9 @@ upstream django {
 # configuration of the server
 server {
     listen      80;
+    listen      443 ssl;
+    ssl_certificate     /etc/nginx/ssl/domain.com.crt;
+    ssl_certificate_key /etc/nginx/ssl/domain.com.key;    
     server_name {host} www.{host};
     charset     utf-8;
 

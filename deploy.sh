@@ -239,6 +239,19 @@ sudo mkdir /var/www/$HOST$MEDIA_URL
 
 #########################################################################################
 # Tell the user what's happening
+echo "Preparaing SSL"
+echo ""
+#########################################################################################
+
+#########################################################################################
+sudo rm -rf /etc/nginx/ssl
+sudo mkdir /etc/nginx/ssl
+sudo cp $HD/Deploy_Saleor/domain.com.crt /etc/nginx/ssl
+sudo cp $HD/Deploy_Saleor/domain.com.key /etc/nginx/ssl
+#########################################################################################
+
+#########################################################################################
+# Tell the user what's happening
 echo "Creating production deployment packages for Saleor API & GraphQL..."
 echo ""
 #########################################################################################
@@ -377,7 +390,7 @@ sudo systemctl enable saleor.service
 # Reload the daemon
 sudo systemctl daemon-reload
 # Start the service
-sudo systemctl start saleor.service
+sudo systemctl restart saleor.service
 #########################################################################################
 
 
