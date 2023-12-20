@@ -2,6 +2,8 @@
 Description=uWSGI for Saleor API
 After=network.target
 [Service]
+User=root
+Group=root
 Restart=always
 ExecStart={hd}/env/saleor/bin/uwsgi --emperor {hd}/env/saleor/vassals/prod.ini
 [Install]
