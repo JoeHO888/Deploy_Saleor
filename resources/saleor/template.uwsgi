@@ -22,9 +22,11 @@ chown-socket            = user:user
 chmod-socket            = 660
 strict                  = true
 need-app                = true
-# uid                     = www-data
-# gid                     = www-data
+uid                     = user
+gid                     = user
 # full path to python virtual env
 home                    = {hd}/env/saleor
 # full path to Django project's root directory
 chdir                   = {hd}/saleor/
+
+env                     =ALLOWED_HOSTS=*
