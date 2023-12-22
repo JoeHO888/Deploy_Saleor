@@ -30,3 +30,19 @@ home                    = {hd}/env/saleor
 chdir                   = {hd}/saleor/
 
 env                     =ALLOWED_HOSTS=*
+env                     =ALLOWED_CLIENT_HOSTS=*
+env                     =DEFAULT_COUNTRY=US
+env                     =DEFAULT_CURRENCY=USD
+env                     =ALLOWED_GRAPHQL_ORIGINS=*
+env                     =DATABASE_URL=postgres://saleor:saleor@localhost:5432/saleor
+env                     =EMAIL_URL=smtp://:@:/?ssl=True
+env                     =STATIC_ROOT=/var/www/api.domain.com/static/
+env                     =STATIC_URL=/static/
+env                     =MEDIA_ROOT=/var/www/api.domain.com/media/
+env                     =MEDIA_URL=/media/
+# env                     =ADMIN_EMAIL=admin@domain.com
+# env                     =ADMIN_PASS=password
+# env                     =DEBUG=False
+# env                     =ENABLE_SSL=True
+# env                     =SECRET_KEY=secret_key
+# env                     =RSA_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDippn1eHx2Xw2G\nrnlh4Gf43+NMpYiMhIUt3c2Ixe+xBU/Oh251rGKsqX95+xcocCq2rp4lBOihVmB2\nNVFR/sADiRGBcEJghMPxExC/oFur/yi2m7c4rnPimz69OQ2puf1/AEqDxtYgO2So\nkz+q+flLflHJi0e+zUqBdgj5GgUWukpBKVgVwMQb8H1vOkb6JRUYsIvA8vy5lnx/\njTr/rrcTdXPvE3a0OZDGNqUnOl8zTZ+HScCUuXrNXxeMTcn7yp6n63VLNE43X3BG\nAFr3zehZ1fNy8RrVyQpin09sRtOeTloFcA8fjfzPDaepNpY8sZm59ahp99kE1Ykj\nC6pvjMFhAgMBAAECggEACDboERK9FhAzXgyARzkaI5W/t/Uu6gLajdNCYgDkg0qx\nPgfAC+FD0USyY1IjoHpSPf09q5NOOBy4kcg0ao+cV3R2DzYpnbRqIphhjMRr1iPB\nDr89iH8gIZglUbfZ5CsiwiHZUYXZGGF2sDpn/hMhwyfwoGidIM/xcZg80oRsJ0rn\nMrckn57UBRs8Z47vCpp5sCogkZm+SAx9zIye7O8hxWH/+XmLc1wasTRqOtG3p2o2\nqEWq4A4LzGAgpNFUljj06Nq7n1ZqlPvdmkwFyZu++6VLt6vs3wwLTRIj7s6Fe/tX\nxBh1WeZjSlUukWHU//Kr84+2J/Nk7AUZ8fiDtuEscQKBgQD4E3HTT7X/Vvshi4uJ\n6YBT0fn+/8PFTRAFmL/+r61EJbuSMqwcmnIG5GJxGgn9CpxuDVolj6DslzG4z1Mn\nz7a6NGNL+w+JRZv5cyNzWaUi1WwUy8oqc7ABd+a7XlW0ltnWyvuuSrz/To05p5L6\nOJ1Fs2EY2KPxUQedn9nxP6nmGQKBgQDp4/W5V0c+dTqa71AnCKqLKBHyja/O+32P\n7bwusxn5KikR/w/6l7ZXprN5B/6Q3dPc8+7IBS9rmKrgKKAOZxTgBptSScDr6ryV\nfviYOaAnJiGsUvZFxf2DjlWjOt0EI1yBWU8Q2SfWwka5qOUEO/Gib6V8SOwg404Z\nT3cPBE1OiQKBgHH7fTE6TsUjkf+3vkV/pBbfQ56Gpczhu5rWtGCxF0tYivaBkdMS\no5HHHfQZor1BQt7OA71+YNJUJeRkXjDMn4iuyXD/ygOomCHlZUR6zAVVSnPDrwAS\nZ6xFCx7MGVUAetbWLQ3ICU7FKN50wHN3z8tWwCZKZAlc0cL6z4ipV8cBAoGAPPO6\nWrWjDGTShAPvuGxqvV8Q5kwEUAV8IGENFIJ6N1PEZjs5N84Hp+n6hYUO00Pr7X3o\ncVnglMKxbT9JDtfQOd2e5p/v1ctToAX51PnXgbxPNDBem6pQOdOC/8ncRTLN7auP\njk15M19nvQSFwke43eMIlk4OszdpZ/Esjs5JMzkCgYEAuzvh+hBp1K+MCsq79RUj\nY9x3G4RiKrAvCj1lG+TuhfaF7u7ixd3595Hhm28kLxhZN7UW6xiIH0OLdRNPmw3B\nZvKHCfxE8nPOZeyPfbFBpChS4+0oP7sQZLD02RSoNjO1QrSbbzIVft8Yd42Frrxy\nNc+nkYbDB3ogrRcaQ9CIm+I=\n-----END PRIVATE KEY-----

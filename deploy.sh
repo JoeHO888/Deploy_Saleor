@@ -316,6 +316,7 @@ wait
 #sudo -u $UN django-admin.py startproject saleor
 # Install uwsgi
 pip3 install uwsgi
+pip3 install gunicorn
 wait
 # Install poetry
 pip3 install poetry==1.7.0
