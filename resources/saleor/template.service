@@ -6,7 +6,7 @@ User=root
 Group=root
 Restart=always
 WorkingDirectory={hd}/saleor
-# ExecStart={hd}/env/saleor/bin/uwsgi --emperor {hd}/env/saleor/vassals/prod.ini
-ExecStart={hd}/env/saleor/bin/gunicorn --access-logfile {hd}/saleor/gunicorn.access.log --error-logfile {hd}/saleor/gunicorn.error.log --bind unix://{hd}/run/saleor.sock --workers 2 --worker-class saleor.asgi.gunicorn_worker.UvicornWorker saleor.asgi:application
+EnvironmentFile={hd}/saleor/.env
+ExecStart={hd}/env/saleor/bin/gunicorn --bind unix://{hd}/run/saleor.sock --log-config log.conf --workers 2 --worker-class uvicorn.workers.UvicornWorker saleor.asgi:application
 [Install]
 WantedBy=multi-user.target

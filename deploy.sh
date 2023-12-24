@@ -238,6 +238,14 @@ sudo mkdir /var/www/$HOST$MEDIA_URL
 #########################################################################################
 
 #########################################################################################
+if [ -d "/var/log/gunicorn" ]; then
+  # Take action if $DIR exists. #
+  echo "Installing config files in ${DIR}..."
+fi
+sudo cp $HD/Deploy_Saleor/resources/saleor/log.conf $HD/saleor
+#########################################################################################
+
+#########################################################################################
 # Tell the user what's happening
 echo "Preparaing SSL"
 echo ""
@@ -260,6 +268,9 @@ echo ""
 # Setup the environment variables for Saleor API
 #########################################################################################
 # Build the database URL
+PGSQLDBNAME="saleor"
+PGSQLUSER="saleor"
+PGSQLUSERPASS="saleor"
 DB_URL="postgres://$PGSQLUSER:$PGSQLUSERPASS@$PGDBHOST:$DBPORT/$PGSQLDBNAME"
 EMAIL_URL="smtp://$EMAIL:$EMAIL_PW@$EMAIL_HOST:/?ssl=True"
 API_HOST=$(hostname -i);
@@ -317,6 +328,7 @@ wait
 # Install uwsgi
 pip3 install uwsgi
 pip3 install gunicorn
+pip3 install uvicorn
 wait
 # Install poetry
 pip3 install poetry==1.7.0
