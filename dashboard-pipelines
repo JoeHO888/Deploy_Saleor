@@ -1,13 +1,30 @@
-codeql
-deploy-master-staging
-deploy-staging
-deploy-cloud
+
+
 e2e
 test-nightly
-dependency-check
-prepare-release
 publish-containers
+
+# Check how many components are using new libraries
+dependency-check
+
+# Test
+# 8 minutes
+test
+
+# Remove S3 directory & invalidate CDN cache
+test-env-cleanup
+
+# Deploy to CDN
+# Prod
+deploy-cloud
+# Staging
+prepare-release
+deploy-master-staging
+deploy-staging
+
+# App Security
+codeql
+
+# Visual Regression Test (can ignore)
 storybook-chromatic-branch
 storybook-chromatic-main
-test
-test-env-cleanup
