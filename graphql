@@ -1,0 +1,52 @@
+mutation {
+  accountRegister(
+    input: {
+      email: "localtest@example.com"
+      password: "P@55w.rd1234"
+      redirectUrl: "http://localhost:3001/account-confirm/"
+      channel: "default-channel"
+      
+    }
+  ) {
+    errors {
+      field
+      code
+    }
+    user {
+      email
+      isActive
+      isConfirmed
+    }
+  }
+}
+
+mutation updateSettings {
+  shopSettingsUpdate(   
+    input: {
+      enableAccountConfirmationByEmail:false
+    }) {
+    shop {
+      enableAccountConfirmationByEmail
+    }
+    errors {
+      field
+      message
+      code
+    }
+  }
+}
+
+{
+  "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjZWTU5vYXNfVE5XNFVYNGtiY1RXa3JzSjk4OExWZ1hmazdzZ3YyTzk1TmMiLCJ0eXAiOiJKV1QifQ.eyJpYXQiOjE3MDM2ODcyNzksIm93bmVyIjoic2FsZW9yIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDAwL2dyYXBocWwvIiwiZXhwIjoxNzAzNjg3NTc5LCJ0b2tlbiI6IlprTUZoejFidFFXUiIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9pZCI6IlZYTmxjam94IiwiaXNfc3RhZmYiOnRydWV9.G5xfZVNVfOLYthsA4rpdEwGX5qenra1ZW74fdd5BEzHUnmJd6yZfyMN_G-rtTHblhRGMp6DtLvCgn5aZjCHL0L2vdGEQmaRLJ0LmXJDOrWquXlUtNGoPOEnQrkWEk5k6SwS-HW01IaGTm4ljfTWk5VY1-fvsPW_yWJduiy3LTCaHhNOuH8b67WjFNlKToQdLI-r8XC7_HRTEMmtj_DGwMZJWQE8iqaqW3AMvicjWpKOtcFSrIwAk4yIggX-2kPrilypdkNPJqbLdYOn-_XbFQV-E5LI-REoIAeKaGLockxzTgNoOqJRbihOOijLo1zUKFyCMS7rxmXN7x_MLHNi3_A"
+}
+
+mutation {
+  tokenCreate(email: "admin@example.com", password: "admin") {
+    token
+    refreshToken
+    errors {
+      field
+      message
+    }
+  }
+}

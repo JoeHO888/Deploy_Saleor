@@ -275,9 +275,9 @@ DB_URL="postgres://$PGSQLUSER:$PGSQLUSERPASS@$PGDBHOST:$DBPORT/$PGSQLDBNAME"
 EMAIL_URL="smtp://$EMAIL:$EMAIL_PW@$EMAIL_HOST:/?ssl=True"
 API_HOST=$(hostname -i);
 # Build the chosts and ahosts lists
-C_HOSTS="$HOST,$API_HOST,localhost,127.0.0.1"
-A_HOSTS="$HOST,$API_HOST,localhost,127.0.0.1"
-QL_ORIGINS="$HOST,$API_HOST,localhost,127.0.0.1"
+C_HOSTS="$HOST,$API_HOST,$APP_HOST,localhost,127.0.0.1"
+A_HOSTS="$HOST,$API_HOST,$APP_HOST,localhost,127.0.0.1"
+QL_ORIGINS="$HOST,$API_HOST,$APP_HOST,localhost,127.0.0.1"
 # Write the production .env file from template.env
 sed "s|{dburl}|$DB_URL|
           s|{emailurl}|$EMAIL_URL|
