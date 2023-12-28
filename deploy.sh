@@ -65,6 +65,9 @@ SAME_HOST="no"
 APP_HOST="dashboard.domain.com"
 APP_MOUNT_URI="app.domain.com"
 
+TEST_ACCOUNT_CONFIRM_REDIRECT_URL="dashboard.domain.comaccount-confirm"
+TEST_STAFF_CONFIRM_REDIRECT_URL="dashboard.domain.comnew-password"
+
 #########################################################################################
 # Open the selected ports for the API and APP
 #########################################################################################
@@ -238,9 +241,10 @@ sudo mkdir /var/www/$HOST$MEDIA_URL
 #########################################################################################
 
 #########################################################################################
-if [ -d "/var/log/gunicorn" ]; then
+if [ ! -d "/var/log/gunicorn" ]; then
   # Take action if $DIR exists. #
   echo "Installing config files in ${DIR}..."
+  mkdir -p /var/log/gunicorn
 fi
 sudo cp $HD/Deploy_Saleor/resources/saleor/log.conf $HD/saleor
 #########################################################################################
@@ -275,7 +279,7 @@ DB_URL="postgres://$PGSQLUSER:$PGSQLUSERPASS@$PGDBHOST:$DBPORT/$PGSQLDBNAME"
 EMAIL_URL="smtp://$EMAIL:$EMAIL_PW@$EMAIL_HOST:/?ssl=True"
 API_HOST=$(hostname -i);
 # Build the chosts and ahosts lists
-C_HOSTS="$HOST,$API_HOST,$APP_HOST,localhost,127.0.0.1"
+C_HOSTS="$HOST,$API_HOST,$APP_HOST,$TEST_ACCOUNT_CONFIRM_REDIRECT_URL,$TEST_STAFF_CONFIRM_REDIRECT_URL,localhost,127.0.0.1"
 A_HOSTS="$HOST,$API_HOST,$APP_HOST,localhost,127.0.0.1"
 QL_ORIGINS="$HOST,$API_HOST,$APP_HOST,localhost,127.0.0.1"
 # Write the production .env file from template.env

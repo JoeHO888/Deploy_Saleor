@@ -14,7 +14,7 @@ cd $HD
 if [ -d "$HD/saleor-dashboard" ]; then
         sudo rm -R $HD/saleor-dashboard
 fi
-sudo -u $UN git clone https://github.com/mirumee/saleor-dashboard.git
+sudo -u $UN git clone https://github.com/JoeHO888/saleor-dashboard.git
 wait
 # Build the API URL
 API_URL="https://$HOST/$APIURI/"
