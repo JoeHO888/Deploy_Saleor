@@ -148,8 +148,10 @@ else
 fi
 #########################################################################################
 
-
-
+#########################################################################################
+sudo bash < <(curl -sL https://raw.githubusercontent.com/axllent/mailpit/develop/install.sh)
+mailpit --ui-auth-file $HD/Deploy_Saleor/mailpit_password --smtp-auth-file $HD/Deploy_Saleor/mailpit_password --smtp-auth-allow-insecure
+#########################################################################################
 
 #########################################################################################
 # Tell the user what's happening
