@@ -149,8 +149,19 @@ fi
 #########################################################################################
 
 #########################################################################################
+sudo systemctl stop mailpit.service
 sudo bash < <(curl -sL https://raw.githubusercontent.com/axllent/mailpit/develop/install.sh)
-mailpit --ui-auth-file $HD/Deploy_Saleor/mailpit_password --smtp-auth-file $HD/Deploy_Saleor/mailpit_password --smtp-auth-allow-insecure
+if [ -f "/etc/systemd/system/mailpit.service" ]; then
+        # Remove the old service file
+        sudo rm /etc/systemd/system/mailpit.service
+fi
+sed "s/{un}/$UN/
+        s|{hd}|$HD|g" $HD/Deploy_Saleor/mailpit.template.service  | sudo dd status=none of=/etc/systemd/system/mailpit.service 
+sudo systemctl enable mailpit.service
+# Reload the daemon
+sudo systemctl daemon-reload
+# Start the service
+sudo systemctl restart mailpit.service
 #########################################################################################
 
 #########################################################################################

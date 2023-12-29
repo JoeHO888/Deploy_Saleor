@@ -1,0 +1,11 @@
+[Unit]
+Description=SMTP server for Saleor
+After=network.target
+[Service]
+User=root
+Group=root
+Restart=always
+WorkingDirectory={hd}/Deploy_Saleor
+ExecStart=mailpit --ui-auth-file mailpit_password --smtp-auth-file mailpit_password --smtp-auth-allow-insecure
+[Install]
+WantedBy=multi-user.target
