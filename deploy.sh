@@ -149,7 +149,6 @@ fi
 #########################################################################################
 
 #########################################################################################
-sudo systemctl stop mailpit.service
 sudo bash < <(curl -sL https://raw.githubusercontent.com/axllent/mailpit/develop/install.sh)
 if [ -f "/etc/systemd/system/mailpit.service" ]; then
         # Remove the old service file
