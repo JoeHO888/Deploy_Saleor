@@ -6,6 +6,6 @@ User=root
 Group=root
 Restart=always
 WorkingDirectory={hd}/Deploy_Saleor
-ExecStart=mailpit --ui-auth-file mailpit_password --smtp-auth-file mailpit_password --smtp-auth-allow-insecure
+ExecStart=mailpit
 [Install]
 WantedBy=multi-user.target
