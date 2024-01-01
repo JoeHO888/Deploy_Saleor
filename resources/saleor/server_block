@@ -22,11 +22,11 @@ server {
     
     # Django media and static files
     location {media}  {
-        alias /var/www/{host}{media};
+        alias {hd}/saleor/media/;
     }
     
     location {static} {
-        alias /var/www/{host}{static};
+        alias {hd}/saleor/static/;
     }
 
     # Send all non-media requests to the Django server.

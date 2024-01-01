@@ -2,7 +2,7 @@
 # deploy-saleor.sh
 # Author:       Aaron K. Nall   http://github.com/thewhiterabbit
 #########################################################################################
-#!/bin/sh
+#!/bin/bash
 set -e
 
 #########################################################################################
@@ -15,6 +15,46 @@ else
         HD="/root"
 fi
 cd $HD
+#########################################################################################
+sudo apt-get update
+sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi python3.9-venv gcc
+sudo apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libpq-dev
+sudo apt-get install -y postgresql postgresql-contrib nginx redis
+
+#########################################################################################
+# Set variables for the password, obfuscation string, and user/database names
+#########################################################################################
+# Append the database name for Saleor with the obfuscation string
+PGSQLDBNAME="saleor"
+# Append the database username for Saleor with the obfuscation string
+PGSQLUSER="saleor"
+# Generate a 128 byte password for the Saleor database user
+# TODO: Add special characters once we know which ones won't crash the python script
+PGSQLUSERPASS="saleor"
+#########################################################################################
+
+#########################################################################################
+# Create a superuser for Saleor
+#########################################################################################
+# Create the role in the database and assign the generated password
+
+# Stop Celery
+if systemctl list-units --full -all | grep -Fq 'celery'; then    
+  sudo systemctl stop celery.service   
+fi
+
+# Restart postgresql service, if it exists.    
+if systemctl list-units --full -all | grep -Fq 'postgresql'; then    
+  sudo systemctl restart postgresql.service   
+fi
+
+# Drop all connections
+sudo -i -u postgres psql -c "DROP DATABASE IF EXISTS $PGSQLDBNAME;"
+sudo -i -u postgres psql -c "DROP ROLE IF EXISTS $PGSQLUSER;"
+sudo -i -u postgres psql -c "CREATE ROLE $PGSQLUSER PASSWORD '$PGSQLUSERPASS' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;"
+# Create the database for Saleor
+sudo -i -u postgres psql -c "CREATE DATABASE $PGSQLDBNAME;"
+# TODO - Secure the postgers user account
 #########################################################################################
 
 
@@ -60,6 +100,7 @@ GQL_PORT="9000"
 API_PORT="8000"
 APIURI="graphql"
 VERSION="main"
+SUPER_USER_PASSWORD="P@55w.rd1234"
 
 SAME_HOST="no"
 APP_HOST="dashboard.domain.com"
@@ -149,6 +190,10 @@ fi
 #########################################################################################
 
 #########################################################################################
+# Restart mailpit service, if it exists.    
+if systemctl list-units --full -all | grep -Fq 'mailpit'; then    
+  sudo systemctl stop mailpit.service   
+fi
 sudo bash < <(curl -sL https://raw.githubusercontent.com/axllent/mailpit/develop/install.sh)
 if [ -f "/etc/systemd/system/mailpit.service" ]; then
         # Remove the old service file
@@ -253,10 +298,15 @@ sudo mkdir /var/www/$HOST$MEDIA_URL
 #########################################################################################
 
 #########################################################################################
+sed "s/{un}/$UN/
+        s|{hd}|$HD|g" $HD/Deploy_Saleor/celery.template.service  | sudo dd status=none of=/etc/systemd/system/celery.service
+#########################################################################################                  
+
+#########################################################################################
 if [ ! -d "/var/log/gunicorn" ]; then
   # Take action if $DIR exists. #
   echo "Installing config files in ${DIR}..."
-  mkdir -p /var/log/gunicorn
+  sudo mkdir -p /var/log/gunicorn
 fi
 sudo cp $HD/Deploy_Saleor/resources/saleor/log.conf $HD/saleor
 #########################################################################################
@@ -270,6 +320,7 @@ echo ""
 #########################################################################################
 sudo rm -rf /etc/nginx/ssl
 sudo mkdir /etc/nginx/ssl
+sudo cp $HD/Deploy_Saleor/nginx.conf /etc/nginx/nginx.conf 
 sudo cp $HD/Deploy_Saleor/domain.com.crt /etc/nginx/ssl
 sudo cp $HD/Deploy_Saleor/domain.com.key /etc/nginx/ssl
 #########################################################################################
@@ -284,9 +335,6 @@ echo ""
 # Setup the environment variables for Saleor API
 #########################################################################################
 # Build the database URL
-PGSQLDBNAME="saleor"
-PGSQLUSER="saleor"
-PGSQLUSERPASS="saleor"
 DB_URL="postgres://$PGSQLUSER:$PGSQLUSERPASS@$PGDBHOST:$DBPORT/$PGSQLDBNAME"
 EMAIL_URL="smtp://$EMAIL:$EMAIL_PW@$EMAIL_HOST:/?ssl=True"
 API_HOST=$(hostname -i);
@@ -355,8 +403,6 @@ wait
 # Install the decoupler for .env file
 pip3 install python-decouple
 wait
-# Set any secret Environment Variables
-export ADMIN_PASS="$ADMIN_PASS"
 # Install the project
 source $HD/.nvm/nvm.sh
 nvm use v16.20.2
@@ -368,7 +414,7 @@ wait
 # Establish the database
 python3 manage.py migrate
 wait
-python3 manage.py populatedb --createsuperuser
+python3 manage.py populatedb --createsuperuser --superuser_password $SUPER_USER_PASSWORD
 wait
 # Collect the static elemants
 python3 manage.py collectstatic
@@ -422,6 +468,16 @@ sudo systemctl daemon-reload
 sudo systemctl restart saleor.service
 #########################################################################################
 
+#########################################################################################
+# Enable the Celery service
+#########################################################################################
+# Enable
+sudo systemctl enable celery.service
+# Reload the daemon
+sudo systemctl daemon-reload
+# Start the service
+sudo systemctl restart celery.service
+#########################################################################################
 
 
 #########################################################################################
