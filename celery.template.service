@@ -1,0 +1,14 @@
+[Unit]
+Description=Saleor Async worker
+After=network.target
+[Service]
+User=root
+Group=root
+Restart=always
+WorkingDirectory={hd}/saleor
+EnvironmentFile={hd}/saleor/.env
+Environment="PATH={hd}/env/saleor/venv/bin"
+ExecStart={hd}/env/saleor/bin/celery -A saleor --app=saleor.celeryconf:app worker --loglevel=debug -B --scheduler django_celery_beat.schedulers:DatabaseScheduler
+[Install]
+WantedBy=multi-user.target
+
