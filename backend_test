@@ -1,0 +1,2 @@
+Unit Test
+pytest -m "not e2e" --cov --cov-report= --junitxml=junit/test-results.xml --django-db-bench=./queries-results.json

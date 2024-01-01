@@ -1,0 +1,3108 @@
+
+> saleor-dashboard@3.19.0-dev cy:run
+> cypress run
+
+cypress-grep: will omit filtered tests
+
+================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        12.17.0                                                                        │
+  │ Browser:        Electron 106 (headless)                                                        │
+  │ Node Version:   v20.9.0 (/home/user/.nvm/versions/node/v20.9.0/bin/node)                       │
+  │ Specs:          74 found (apps.js, customerRegistration.js, login.js, metadata.js, staffMember │
+  │                 s.js, translations.js, catalog/categories.js, catalog/collections.js, checkout │
+  │                 /clickAndCollect.js, checkout/productWithoutShipping.js, checkout/purchaseWith │
+  │                 ProductTypes.js, checko...)                                                    │
+  │ Searched:       cypress/e2e/**/*.{js,jsx,ts,tsx}                                               │
+  │ Experiments:    experimentalMemoryManagement=true                                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  apps.js                                                                        (1 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a staff user I want to manage apps
+    ✓ should be able to create app. TC: SALEOR_3001 (6244ms)
+    ✓ should be able to create webhook. TC: SALEOR_3002 (6558ms)
+    ✓ should be able to create token. TC: SALEOR_3003
+    ✓ should be able to use app only to manage giftCards. TC: SALEOR_3004
+    ✓ should be able to use app to create order from checkout. TC: SALEOR_3005
+
+
+  5 passing (16s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_120.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     15 seconds                                                                       │
+  │ Spec Ran:     apps.js                                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/apps.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  customerRegistration.js                                                        (2 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Tests for customer registration
+    ✓ should register customer TC: SALEOR_1212 (10424ms)
+    ✓ shouldn't register customer with duplicated email TC: SALEOR_1213
+    ✓ should activate customer from dashboard SALEOR_1211 (5446ms)
+
+
+  3 passing (27s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_121.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     26 seconds                                                                       │
+  │ Spec Ran:     customerRegistration.js                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/customerRegistration.js     (1280x720)
+     /Tests for customer registration -- should register customer TC SALEOR_1212 (fai               
+     led).png                                                                                       
+
+File removed: /home/user/saleor-dashboard/cypress/videos/customerRegistration.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  login.js                                                                       (3 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  User authorization
+    ✓ should successfully log in an user
+    ✓ should fail for wrong password
+    ✓ should successfully log out an user
+
+
+  3 passing (4s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_122.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     login.js                                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/login.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  metadata.js                                                                    (4 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Test for metadata
+    ✓ should create metadata for product TC: SALEOR_3301
+    ✓ should create metadata for order TC: SALEOR_3302
+
+
+  2 passing (1s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_123.json
+
+File removed: /home/user/saleor-dashboard/cypress/videos/metadata.js.mp4
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 second                                                                         │
+  │ Spec Ran:     metadata.js                                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  staffMembers.js                                                                (5 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Staff members
+    ✓ should be able to invite staff user. TC: SALEOR_3501 (22755ms)
+    ✓ should remove user permissions. TC: SALEOR_3504
+    ✓ should reset password. TC: SALEOR_3505 (13238ms)
+    ✓ should not be able to create staff member with not unique email. TC: SALEOR_3508 - should not be migrated to playwright as critical
+    ✓ should not be able to update staff member with not unique email. TC: SALEOR_3509 (7129ms)
+    - should update staff member name and email. TC: SALEOR_3507
+    ✓ should create new user and successfully change password. TC: SALEOR_3510 (15309ms)
+
+
+  6 passing (1m)
+  1 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_124.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      6                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      1                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 minute, 5 seconds                                                              │
+  │ Spec Ran:     staffMembers.js                                                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/staffMembers.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  translations.js                                                                (6 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to manage translations
+    ✓ should be able to create new translation. TC:SALEOR_1701 (19613ms)
+    ✓ should be able to update translation. TC:SALEOR_1702 (20162ms)
+
+
+  2 passing (40s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_125.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     39 seconds                                                                       │
+  │ Spec Ran:     translations.js                                                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/translations.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  catalog/categories.js                                                          (7 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to manage categories
+    ✓ should be able to create category. TC: SALEOR_0201
+    ✓ should be able to create category as subcategory. TC: SALEOR_0202
+    ✓ should be able to add product to category. TC: SALEOR_0203
+    ✓ should be able to remove product from category. TC: SALEOR_0204 (8009ms)
+    1) should be able to enter category details page. TC: SALEOR_0205
+    ✓ should be able to delete category. TC: SALEOR_0206
+    ✓ should be able to update category. TC: SALEOR_0207
+    ✓ should be able to delete several categories on categories list page. TC: SALEOR_0209 (9166ms)
+    ✓ should be able to remove subcategory from category. TC: SALEOR_0208 (7999ms)
+
+
+  8 passing (51s)
+  1 failing
+
+  1) As an admin I want to manage categories
+       should be able to enter category details page. TC: SALEOR_0205:
+     TypeError: Cannot read properties of null (reading 'getBounds')
+      at Context.eval (webpack:///./cypress/support/e2e.js:103:52)
+
+
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_126.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        9                                                                                │
+  │ Passing:      8                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  3                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     50 seconds                                                                       │
+  │ Spec Ran:     catalog/categories.js                                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/catalog/categories.js/A     (1280x720)
+     s an admin I want to manage categories -- should be able to enter category detai               
+     ls page. TC SALEOR_0205 (failed).png                                                           
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/catalog/categories.js/A     (1280x720)
+     s an admin I want to manage categories -- should be able to enter category detai               
+     ls page. TC SALEOR_0205 (failed) (attempt 2).png                                               
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/catalog/categories.js/A     (1280x720)
+     s an admin I want to manage categories -- should be able to enter category detai               
+     ls page. TC SALEOR_0205 (failed) (attempt 3).png                                               
+
+File removed: /home/user/saleor-dashboard/cypress/videos/catalog/categories.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  catalog/collections.js                                                         (8 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to manage collections.
+    ✓ should create hidden collection. TC: SALEOR_0301 (8431ms)
+    ✓ should create published collection. TC: SALEOR_0302 (7643ms)
+    ✓ should create collection not available for channel. TC: SALEOR_0303 (7146ms)
+    ✓ should create published collection with products hidden in listings. TC: SALEOR_0304 (7794ms)
+    ✓ should delete collection. TC: SALEOR_0305
+    ✓ should update collection. TC: SALEOR_0306 (6038ms)
+    ✓ should assign product to collection. TC: SALEOR_0307
+    ✓ should remove product from collection. TC: SALEOR_0308
+    ✓ delete several collections on collections list page. TC: SALEOR_0309 (8633ms)
+
+
+  9 passing (51s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_127.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        9                                                                                │
+  │ Passing:      9                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     51 seconds                                                                       │
+  │ Spec Ran:     catalog/collections.js                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/catalog/collections.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  checkout/clickAndCollect.js                                                    (9 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Warehouses in checkout
+    ✓ should create warehouse with all warehouses pickup and private stock
+    ✓ should create warehouse with all warehouses pickup and public stock
+    ✓ should create warehouse with local stock only pickup and public stock
+    ✓ should not be possible to set local pickup when private stock (5029ms)
+    ✓ should create order with warehouse address
+
+
+  5 passing (13s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_128.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     12 seconds                                                                       │
+  │ Spec Ran:     checkout/clickAndCollect.js                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/checkout/clickAndCollect.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  checkout/productWithoutShipping.js                                            (10 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Products without shipment option
+    ✓ should be not possible to buy product without shipping option
+
+
+  1 passing (1s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_129.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 second                                                                         │
+  │ Spec Ran:     checkout/productWithoutShipping.js                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/checkout/productWithoutShipping.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  checkout/purchaseWithProductTypes.js                                          (11 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an unlogged customer I want to order physical and digital products
+    ✓ should purchase digital product as unlogged customer. TC: SALEOR_0402 - should not be migrated to playwright
+    ✓ should purchase physical product as unlogged customer. TC: SALEOR_0403 should not be migrated to playwright
+    ✓ should purchase multiple products with all product types as unlogged customer. TC: SALEOR_0404
+
+
+  3 passing (3s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_130.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 seconds                                                                        │
+  │ Spec Ran:     checkout/purchaseWithProductTypes.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/checkout/purchaseWithProductTypes.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  checkout/stocksInCheckout.js                                                  (12 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Manage products stocks in checkout
+    ✓ should not be possible to add product with quantity greater than stock to checkout. TC: SALEOR_0405
+    ✓ should buy product with no quantity if tracking is not set. TC: SALEOR_0406
+    ✓ should create checkout with last product in stock. TC: SALEOR_0419
+
+
+  3 passing (3s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_131.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     checkout/stocksInCheckout.js                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/checkout/stocksInCheckout.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  checkout/warehouses.js                                                        (13 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Warehouses in checkout
+    ✓ should not be possible to buy product for country not listed in warehouse
+
+
+  1 passing (767ms)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_132.json
+
+File removed: /home/user/saleor-dashboard/cypress/videos/checkout/warehouses.js.mp4
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     checkout/warehouses.js                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/customer.js                                                     (14 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Tests for customer
+    ✓ should create customer. TC: SALEOR_1201 (15544ms)
+    ✓ should add address to customer. TC: SALEOR_1204 (6571ms)
+    ✓ should remove address from customer. TC: SALEOR_1205
+    ✓ should set address as default. TC: SALEOR_1206
+    ✓ should update address. TC: SALEOR_1208 (5860ms)
+    ✓ should delete customer. TC: SALEOR_1203
+    ✓ should deactivate customer. TC: SALEOR_1209
+    ✓ should update customer. TC: SALEOR_1202
+
+
+  8 passing (1m)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_133.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        8                                                                                │
+  │ Passing:      8                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 minute, 20 seconds                                                             │
+  │ Spec Ran:     configuration/customer.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/customer.     (1280x720)
+     js/Tests for customer -- should add address to customer. TC SALEOR_1204 (failed)               
+     .png                                                                                           
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/customer.     (1280x720)
+     js/Tests for customer -- should add address to customer. TC SALEOR_1204 (failed)               
+      (attempt 2).png                                                                               
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/customer.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/navigation.js                                                   (15 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Tests for menu navigation
+    ✓ should create a menu. TC: SALEOR_1301 (5393ms)
+    ✓ should add new category item to menu. TC: SALEOR_1302 (5454ms)
+    ✓ should add new collection item to menu. TC: SALEOR_1303 (5110ms)
+    ✓ should add new page item to menu. TC: SALEOR_1304 (5104ms)
+
+
+  4 passing (21s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_134.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     21 seconds                                                                       │
+  │ Spec Ran:     configuration/navigation.js                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/navigation.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/permissions.js                                                  (16 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Permissions groups
+    ✓ should create permission group. TC: SALEOR_1401
+    1) should delete permission group. TC: SALEOR_1402
+    2) should add user to permission group. TC: SALEOR_1403
+    3) should remove user from permission group. TC: SALEOR_1404
+
+
+  1 passing (1m)
+  3 failing
+
+  1) Permissions groups
+       should delete permission group. TC: SALEOR_1402:
+     TypeError: Cannot read properties of undefined (reading 'node')
+      at Context.eval (webpack:///./cypress/e2e/configuration/permissions.js:71:43)
+
+  2) Permissions groups
+       should add user to permission group. TC: SALEOR_1403:
+     AssertionError: Timed out retrying after 20000ms: Expected to find content: 'Test Test' within the selector: '[data-test-id="user-row"]' but never did.
+      at Context.eval (webpack:///./cypress/e2e/configuration/permissions.js:115:11)
+
+  3) Permissions groups
+       should remove user from permission group. TC: SALEOR_1404:
+     TypeError: Cannot read properties of undefined (reading 'node')
+      at Context.eval (webpack:///./cypress/e2e/configuration/permissions.js:143:43)
+
+
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_135.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      3                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  9                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 minute, 10 seconds                                                             │
+  │ Spec Ran:     configuration/permissions.js                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/permissio     (1280x720)
+     ns.js/Permissions groups -- should delete permission group. TC SALEOR_1402 (fail               
+     ed).png                                                                                        
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/permissio     (1280x720)
+     ns.js/Permissions groups -- should delete permission group. TC SALEOR_1402 (fail               
+     ed) (attempt 2).png                                                                            
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/permissio     (1280x720)
+     ns.js/Permissions groups -- should delete permission group. TC SALEOR_1402 (fail               
+     ed) (attempt 3).png                                                                            
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/permissio     (1280x720)
+     ns.js/Permissions groups -- should add user to permission group. TC SALEOR_1403                
+     (failed).png                                                                                   
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/permissio     (1280x720)
+     ns.js/Permissions groups -- should add user to permission group. TC SALEOR_1403                
+     (failed) (attempt 2).png                                                                       
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/permissio     (1280x720)
+     ns.js/Permissions groups -- should add user to permission group. TC SALEOR_1403                
+     (failed) (attempt 3).png                                                                       
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/permissio     (1280x720)
+     ns.js/Permissions groups -- should remove user from permission group. TC SALEOR_               
+     1404 (failed).png                                                                              
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/permissio     (1280x720)
+     ns.js/Permissions groups -- should remove user from permission group. TC SALEOR_               
+     1404 (failed) (attempt 2).png                                                                  
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/configuration/permissio     (1280x720)
+     ns.js/Permissions groups -- should remove user from permission group. TC SALEOR_               
+     1404 (failed) (attempt 3).png                                                                  
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/permissions.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/siteSettings.js                                                 (17 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Tests for site settings
+    ✓ should change store address (9287ms)
+
+
+  1 passing (9s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_136.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     9 seconds                                                                        │
+  │ Spec Ran:     configuration/siteSettings.js                                                    │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/siteSettings.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  demo/demoDashboard.js                                                         (18 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Dashboard demo site tests
+    - should be able to log in via UI
+    - should not be able to create new order
+
+
+  0 passing (19ms)
+  2 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_137.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      2                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     demo/demoDashboard.js                                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/demo/demoDashboard.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  homePage/homePage.js                                                          (19 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Displaying welcome message on home page
+    - should display user name on home page
+    ✓ should display user email on home page
+    - should refresh page without errors
+
+
+  1 passing (1s)
+  2 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_138.json
+
+File removed: /home/user/saleor-dashboard/cypress/videos/homePage/homePage.js.mp4
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      2                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 second                                                                         │
+  │ Spec Ran:     homePage/homePage.js                                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  orders/channelsInDraftOrders.js                                               (20 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Channels in draft orders
+    - Draft order channel should be taken from global channel picker. TC: SALEOR_2101
+    - Draft order channel should be taken from global channel picker when changed. TC: SALEOR_2102
+    - should create draft order with chosen channel
+
+
+  0 passing (21ms)
+  3 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_139.json
+
+File removed: /home/user/saleor-dashboard/cypress/videos/orders/channelsInDraftOrders.js.mp4
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      3                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     orders/channelsInDraftOrders.js                                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  orders/draftOrders.js                                                         (21 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Draft orders
+    ✓ should move draft order to orders. TC: SALEOR_2103
+    ✓ should be able to turn of all but one static columns on draft orders detail. TC: SALEOR_2135
+
+
+  2 passing (7s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_140.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     6 seconds                                                                        │
+  │ Spec Ran:     orders/draftOrders.js                                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/orders/draftOrders.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  orders/manageStockReservation.js                                              (22 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to manage stock reservation
+    ✓ should be able to set stock reservation for authenticated customer in checkout. TC: SALEOR_0415
+    ✓ should be able to set stock reservation for anonymous customer in checkout. TC: SALEOR_0416
+    ✓ should be able to leave empty stock reservation for authenticated customer in checkout. TC: SALEOR_0417
+    ✓ should be able to leave empty stock reservation for anonymous customer in checkout. TC: SALEOR_0418
+
+
+  4 passing (8s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_141.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     7 seconds                                                                        │
+  │ Spec Ran:     orders/manageStockReservation.js                                                 │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/orders/manageStockReservation.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  orders/orders.js                                                              (23 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Orders
+    ✓ should not be possible to change channel in order. TC: SALEOR_2105
+    ✓ should cancel fulfillment. TC: SALEOR_2106
+    ✓ should make a refund. TC: 2107
+    ✓ should add line item discount (for single product in order) . TC: SALEOR_2125
+    ✓ should remove product from unconfirmed order . TC: SALEOR_2126
+    ✓ should change quantity of products on order detail view . TC: SALEOR_2127
+    ✓ should add new product on order detail view . TC: SALEOR_2128
+    ✓ should create metadata and private metadata for fulfilled order . TC: SALEOR_2129 (7252ms)
+    ✓ should update metadata and private metadata for fulfilled order .  TC: SALEOR_2130 (9499ms)
+    ✓ should delete metadata and private metadata for fulfilled order .  TC: SALEOR_2131
+    ✓ should open product details from order details - unconfirmed order. TC: SALEOR_2133
+    ✓ should open product details from order details - confirmed order. TC: 2134
+    ✓ should be able to turn off all but one static columns on orders detail. TC: SALEOR_2136
+
+
+  13 passing (43s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_142.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        13                                                                               │
+  │ Passing:      13                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     43 seconds                                                                       │
+  │ Spec Ran:     orders/orders.js                                                                 │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/orders/orders.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  orders/transactionsForOrders.js                                               (24 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Orders
+    ✓ should mark order as paid. TC: 3901
+    - should be able to grant and send refund TC: 3902
+    - should be able to capture manual transaction that covers partial order price TC: 3903
+
+
+  1 passing (4s)
+  2 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_143.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      2                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 seconds                                                                        │
+  │ Spec Ran:     orders/transactionsForOrders.js                                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/orders/transactionsForOrders.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  pages/pageTypes.js                                                            (25 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Tests for page types
+    ✓ should create page type. TC: SALEOR_2301 (5267ms)
+    ✓ should assign attribute. TC: SALEOR_2302 (5658ms)
+
+
+  2 passing (11s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_144.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     10 seconds                                                                       │
+  │ Spec Ran:     pages/pageTypes.js                                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/pages/pageTypes.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  pages/pages.js                                                                (26 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Tests for pages
+    ✓ should create not published page. TC: SALEOR_2201 (5553ms)
+    ✓ should create published page. TC: SALEOR_2202 (7092ms)
+    ✓ should create page with DROPDOWN attribute TC: SALEOR_2203 (5779ms)
+    ✓ should create page with MULTISELECT attribute TC: SALEOR_2204 (5641ms)
+    ✓ should create page with RICH_TEXT attribute TC: SALEOR_2205 (5826ms)
+    ✓ should create page with BOOLEAN attribute TC: SALEOR_2206
+    ✓ should create page with NUMERIC attribute TC: SALEOR_2207
+    ✓ should delete page TC: SALEOR_2209
+    ✓ should update page TC: SALEOR_2208
+
+
+  9 passing (1m)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_145.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        9                                                                                │
+  │ Passing:      9                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 minute, 5 seconds                                                              │
+  │ Spec Ran:     pages/pages.js                                                                   │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/pages/pages.js/Tests fo     (1280x720)
+     r pages -- should create not published page. TC SALEOR_2201 (failed).png                       
+
+File removed: /home/user/saleor-dashboard/cypress/videos/pages/pages.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/images.js                                                            (27 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Tests for images
+    ✓ Should display product image
+    ✓ Should upload saved image
+
+
+  2 passing (4s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_146.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     products/images.js                                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/images.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsVariants.js                                                  (28 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I should be able to create variant
+    ✓ should be able to create variant visible for the customers in all channels. TC: SALEOR_2901 (7862ms)
+    ✓ should be able to create variant. TC: SALEOR_2900
+
+
+  2 passing (11s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_147.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     10 seconds                                                                       │
+  │ Spec Ran:     products/productsVariants.js                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsVariants.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/updatingProducts.js                                                  (29 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Update products
+    ✓ Should update product. TC: SALEOR_2703 (14011ms)
+    ✓ should delete product. TC: SALEOR_2704
+
+
+  2 passing (16s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_148.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     15 seconds                                                                       │
+  │ Spec Ran:     products/updatingProducts.js                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/updatingProducts.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  catalog/giftCards/activateGiftCards.js                                        (30 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a admin I want to use enabled gift card in checkout
+    ✓ should be able to enable gift card and use it in checkout. TC: SALEOR_1006
+    ✓ should not be able to disable gift card and use it in checkout. TC: SALEOR_1007
+    ✓ should not be able to disable several gift cards on gift card list page and use it in checkout. TC: SALEOR_1013 (8972ms)
+    ✓ should be able to enable several gift cards on gift card list page and use it in checkout. TC: SALEOR_1012 (9844ms)
+
+
+  4 passing (24s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_149.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     24 seconds                                                                       │
+  │ Spec Ran:     catalog/giftCards/activateGiftCards.js                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/catalog/giftCards/activateGiftCards.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  catalog/giftCards/createGiftCard.js                                           (31 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to create gift card
+    ✓ should be able to create never expire gift card. TC: SALEOR_1001
+    ✓ should be able to create gift card with two moths expiry. TC: SALEOR_1002
+    ✓ should be able to create gift card with date expiry. TC: SALEOR_1003
+
+
+  3 passing (12s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_150.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     11 seconds                                                                       │
+  │ Spec Ran:     catalog/giftCards/createGiftCard.js                                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/catalog/giftCards/createGiftCard.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  catalog/giftCards/exportGiftCards.js                                          (32 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to export gift card
+    ✓ should be able to export several gift cards to csv file. TC: SALEOR_1010 (12041ms)
+    ✓ should be able to export several gift cards to xlsx file. TC: SALEOR_1014 (13749ms)
+
+
+  2 passing (26s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_151.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     25 seconds                                                                       │
+  │ Spec Ran:     catalog/giftCards/exportGiftCards.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/catalog/giftCards/exportGiftCards.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  catalog/giftCards/purchaseGiftCard.js                                         (33 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a customer I should be able to purchase gift card as a product
+    ✓ should be able to purchase gift card as a product. TC: SALEOR_1008
+
+
+  1 passing (2s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_152.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 second                                                                         │
+  │ Spec Ran:     catalog/giftCards/purchaseGiftCard.js                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/catalog/giftCards/purchaseGiftCard.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  catalog/giftCards/updatingGiftCards.js                                        (34 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to update gift card
+    ✓ should be able to delete gift card. TC: SALEOR_1004
+    ✓ should be able to update gift card. TC: SALEOR_1005
+    ✓ should be able to delete several gift cards. TC: SALEOR_1011 (8259ms)
+
+
+  3 passing (13s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_153.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     13 seconds                                                                       │
+  │ Spec Ran:     catalog/giftCards/updatingGiftCards.js                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/catalog/giftCards/updatingGiftCards.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/attributes/attributeVariantSelection.js                         (35 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to use attributes in variant selection
+    ✓ should create variant with DROPDOWN attribute. TC: SALEOR_0534
+    ✓ should create variant with BOOLEAN attribute. TC: SALEOR_0536
+    ✓ should create variant with NUMERIC attribute. TC: SALEOR_0537
+    ✓ should create variant with SWATCH attribute. TC: SALEOR_0538
+
+
+  4 passing (14s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_154.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     14 seconds                                                                       │
+  │ Spec Ran:     configuration/attributes/attributeVariantSelection.js                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/attributes/attributeVariantSelection.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/attributes/createContentAttribute.js                            (36 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to create content attribute
+    ✓ should be able to create DROPDOWN attribute. TC:SALEOR_0512 (7905ms)
+    ✓ should be able to create MULTISELECT attribute. TC:SALEOR_0513 (7688ms)
+    ✓ should be able to create FILE attribute. TC:SALEOR_0514 (6266ms)
+    ✓ should be able to create RICH_TEXT attribute. TC:SALEOR_0515 (6305ms)
+    ✓ should be able to create BOOLEAN attribute. TC:SALEOR_0516 (6850ms)
+    ✓ should be able to create DATE attribute. TC:SALEOR_0527 (6250ms)
+    ✓ should be able to create DATE_TIME attribute. TC:SALEOR_0528 (6811ms)
+    ✓ should be able to create reference to PRODUCT attribute. TC:SALEOR_0517 (6813ms)
+    ✓ should be able to create reference to PAGE attribute. TC:SALEOR_0518 (6719ms)
+    ✓ should be able to create reference to PRODUCT_VARIANT attribute. TC:SALEOR_0539 (6774ms)
+    ✓ should be able to create numeric IMPERIAL attribute. TC: SALEOR_0519 (8270ms)
+    ✓ should be able to create numeric METRIC attribute. TC: SALEOR_0520 (8263ms)
+    ✓ should be able to create numeric without selecting unit attribute. TC: SALEOR_0521 (6789ms)
+    ✓ should be able to create attribute without require value TC:SALEOR_0522 (6927ms)
+
+
+  14 passing (2m)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_155.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        14                                                                               │
+  │ Passing:      14                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 minute, 38 seconds                                                             │
+  │ Spec Ran:     configuration/attributes/createContentAttribute.js                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/attributes/createContentAttribute.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/attributes/createProductAttributes.js                           (37 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to create product attribute
+    ✓ should be able to create MULTISELECT attribute. TC:SALEOR_0502 (7877ms)
+    ✓ should be able to create RICH_TEXT attribute. TC:SALEOR_0504 (6779ms)
+    ✓ should be able to create BOOLEAN attribute. TC:SALEOR_0505 (6267ms)
+    ✓ should be able to create DATE attribute. TC:SALEOR_0523 (6184ms)
+    ✓ should be able to create DATE_TIME attribute. TC:SALEOR_0524 (6828ms)
+    ✓ should be able to create FILE attribute. TC: SALEOR_0503 (6263ms)
+    ✓ should be able to create PRODUCT attribute. TC:SALEOR_0506 (6894ms)
+    ✓ should be able to create PAGE attribute. TC:SALEOR_0507 (7284ms)
+    ✓ should be able to create PRODUCT_VARIANT attribute. TC:SALEOR_0540 (7227ms)
+    ✓ should be able to create numeric IMPERIAL attribute. TC:SALEOR_0508 (7674ms)
+    ✓ should be able to create numeric METRIC attribute. TC:SALEOR_0509 (7729ms)
+    ✓ should be able to create numeric without selecting unit attribute. TC:SALEOR_0510 (6268ms)
+    ✓ should be able to create attribute without require value. TC:SALEOR_0511 (6965ms)
+    ✓ should create swatch attribute. TC:SALEOR_0531 (7710ms)
+    ✓ should create swatch attribute with image. TC:SALEOR_0532 (8118ms)
+    ✓ should be able delete product attribute. TC:SALEOR_0525
+    ✓ should be able update product attribute. TC:SALEOR_0526
+
+
+  17 passing (2m)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_156.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        17                                                                               │
+  │ Passing:      17                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 minute, 50 seconds                                                             │
+  │ Spec Ran:     configuration/attributes/createProductAttributes.js                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/attributes/createProductAttributes.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/attributes/deleteAndUpdateContentAttribute.js                   (38 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to delete and update content attribute
+    ✓ should be able delete content attribute. TC:SALEOR_0529
+    ✓ should be able update content attribute. TC:SALEOR_0530
+
+
+  2 passing (5s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_157.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     configuration/attributes/deleteAndUpdateContentAttribute.js                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/attributes/deleteAndUpdateContentAttribute.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/attributes/filters.js                                           (39 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Tests for using attributes in filters
+    - should use attribute as filter. TC: SALEOR_0601
+    - should remove attribute from filters. TC: SALEOR_0602
+
+
+  0 passing (11ms)
+  2 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_158.json
+
+Warning: We failed capturing this video.
+
+This error will not affect or change the exit code.
+
+TimeoutError: operation timed out
+    at afterTimeout (/home/user/.cache/Cypress/12.17.0/Cypress/resources/app/node_modules/bluebird/js/release/timers.js:46:19)
+    at Timeout.timeoutTimeout [as _onTimeout] (/home/user/.cache/Cypress/12.17.0/Cypress/resources/app/node_modules/bluebird/js/release/timers.js:76:13)
+    at listOnTimeout (node:internal/timers:559:17)
+    at process.processTimers (node:internal/timers:502:7)
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      2                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     configuration/attributes/filters.js                                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/channels/channels.js                                            (40 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Channels
+    ✓ should create new channel. TC: SALEOR_0701 (7277ms)
+    ✓ should create new channel with expired orders functionality set. TC: SALEOR_0713
+    ✓ should not be able to create new channel with expired orders functionality with values outside boundary conditions. TC: SALEOR_0714
+    ✓ should create channel with shippingZone and warehouse TC: SALEOR_0712 (6630ms)
+    ✓ should validate that creating channels with same slug name as other is not possible. TC: SALEOR_0703
+    ✓ should validate not existing currency. TC: SALEOR_0704
+    ✓ should delete channel. TC: SALEOR_0705
+
+
+  7 passing (30s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_159.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      7                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     30 seconds                                                                       │
+  │ Spec Ran:     configuration/channels/channels.js                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/channels/channels.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/channels/inactiveChannel.js                                     (41 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Tests on inactive channel
+    ✓ should not be possible to add products to order with inactive channel. TC: SALEOR_0706
+    ✓ should not be possible to create checkout with inactive channel. TC: SALEOR_0707
+    ✓ products in inactive channel should not be displayed. TC: SALEOR_0708
+
+
+  3 passing (4s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_160.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 seconds                                                                        │
+  │ Spec Ran:     configuration/channels/inactiveChannel.js                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/channels/inactiveChannel.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/plugins/adyen.js                                                (42 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Adyen payments
+    - should purchase products with simple card
+    - should purchase product with 3D secure 2 Auth
+    - should purchase product with 3D secure 1 Auth
+    - should fail with unknown security number
+    - should fail with timeout in 3D authorization
+    - should fail with closed account
+
+
+  0 passing (750ms)
+  6 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_161.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        6                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      6                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     configuration/plugins/adyen.js                                                   │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/plugins/adyen.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/plugins/plugins.js                                              (43 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to manage plugins
+    ✓ should change user email. TC: SALEOR_3601 (9302ms)
+    - should change admin email plugin. TC: SALEOR_3602 (skipped due to browser)
+
+
+  1 passing (9s)
+  1 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_162.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      1                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     9 seconds                                                                        │
+  │ Spec Ran:     configuration/plugins/plugins.js                                                 │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/plugins/plugins.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/plugins/stripe.js                                               (44 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Stripe payments
+    - should purchase products with simple card
+    - should not purchase products with card with insufficient funds
+    - should purchase products with 3D secure card
+    - should not purchase product when 3D secure not pass
+
+
+  0 passing (731ms)
+  4 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_163.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      4                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     configuration/plugins/stripe.js                                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/plugins/stripe.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/productTypes/attributesInProduductTypes.js                      (45 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to manage attributes in product types
+    ✓ should be able to update product type with product attribute. TC: SALEOR_1503
+    ✓ should be able to update product type with variant attribute. TC: SALEOR_1504
+    ✓ should be able to remove variant attribute from product type. TC: SALEOR_1506
+    ✓ should be able to remove product attribute from product type. TC: SALEOR_1507
+    ✓ should be able to select attribute as variant selection. TC: SALEOR_1508
+
+
+  5 passing (9s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_164.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     9 seconds                                                                        │
+  │ Spec Ran:     configuration/productTypes/attributesInProduductTypes.js                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/productTypes/attributesInProduductTypes.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/productTypes/createProductType.js                               (46 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to create product types
+    ✓ should be able to create product type with gift card kind. TC: SALEOR_1510 - migration in progress - to delete when done
+
+
+  1 passing (2s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_165.json
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/productTypes/createProductType.js.mp4
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     configuration/productTypes/createProductType.js                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/productTypes/deleteProductType.js                               (47 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to manage product types
+    ✓ should be able to delete product type. TC: SALEOR_1505
+    ✓ should be able to delete product type with assigned product. TC: SALEOR_1509
+
+
+  2 passing (4s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_166.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     configuration/productTypes/deleteProductType.js                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/productTypes/deleteProductType.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/shippingMethods/channelsInShipping.js                           (48 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a staff user I want have different shipping method prices for each channel
+    ✓ should be able to display different price for each channel. TC: SALEOR_0805
+
+
+  1 passing (3s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_167.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     configuration/shippingMethods/channelsInShipping.js                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/shippingMethods/channelsInShipping.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/shippingMethods/createShippingMethod.js                         (49 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a staff user I want to create shipping zone and rate
+    ✓ should be able to create weight based shipping method. TC: SALEOR_0804 (14866ms)
+    ✓ should be able to change default weight in shipping methods TC: SALEOR_4
+
+
+  2 passing (17s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_168.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     17 seconds                                                                       │
+  │ Spec Ran:     configuration/shippingMethods/createShippingMethod.js                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/shippingMethods/createShippingMethod.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/shippingMethods/editShippingMethod.js                           (50 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a user I should be able to update and delete shipping method
+    ✓ should be able to update shipping rate. TC: SALEOR_0806
+    ✓ should be able to delete shipping rate. TC: SALEOR_0807
+
+
+  2 passing (6s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_169.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     5 seconds                                                                        │
+  │ Spec Ran:     configuration/shippingMethods/editShippingMethod.js                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/shippingMethods/editShippingMethod.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/shippingMethods/editShippingZone.js                             (51 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a user I should be able to update and delete shipping zone
+    ✓ should be able to update shipping zone. TC: SALEOR_0808 (9168ms)
+    ✓ should be able to delete shipping zone. TC: SALEOR_0809
+    ✓ should be able to delete shipping zones on shipping zones list page. TC: SALEOR_0810 (6144ms)
+
+
+  3 passing (17s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_170.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     17 seconds                                                                       │
+  │ Spec Ran:     configuration/shippingMethods/editShippingZone.js                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/shippingMethods/editShippingZone.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/shippingMethods/postalCodes.js                                  (52 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a user I want to create shipping method with postal codes
+    ✓ should be able to create shipping method with included postal codes. TC: SALEOR_0801 (5730ms)
+    ✓ should be able to create shipping method with excluded postal codes. TC: SALEOR_0802
+
+
+  2 passing (11s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_171.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     10 seconds                                                                       │
+  │ Spec Ran:     configuration/shippingMethods/postalCodes.js                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/shippingMethods/postalCodes.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/warehouses/warehouse.js                                         (53 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to manage warehouses
+    ✓ should be able to create warehouse. TC: SALEOR_1101 (6578ms)
+    ✓ should be able to add warehouse to shipping zone. TC: SALEOR_1102
+    ✓ should be able to delete warehouse. TC: SALEOR_1103
+    ✓ should be able to remove warehouse from shipping zone. TC: SALEOR_1104
+    ✓ should be able to update warehouse. TC: SALEOR_1105 (5317ms)
+
+
+  5 passing (16s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_172.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     16 seconds                                                                       │
+  │ Spec Ran:     configuration/warehouses/warehouse.js                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/warehouses/warehouse.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  discounts/sales/createSalesForProducts.js                                     (54 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to create sale for products
+    ✓ should be able to create percentage discount. TC: SALEOR_1801 (5436ms)
+    ✓ should be able to create fixed price discount. TC: SALEOR_1802
+    ✓ should not be able to see product discount not assign to channel. TC: SALEOR_1803
+
+
+  3 passing (15s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_173.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     14 seconds                                                                       │
+  │ Spec Ran:     discounts/sales/createSalesForProducts.js                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/discounts/sales/createSalesForProducts.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  discounts/sales/createSalesForVariants.js                                     (55 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Sales discounts for variant
+    ✓ should not be able see product variant discount not assigned to channel. TC: SALEOR_1804 (6006ms)
+    ✓ should be able to create percentage discount. TC: SALEOR_1807 (5341ms)
+    ✓ should be able to create fixed price discount. TC: SALEOR_1808
+
+
+  3 passing (43s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_174.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     42 seconds                                                                       │
+  │ Spec Ran:     discounts/sales/createSalesForVariants.js                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/discounts/sales/createS     (1280x720)
+     alesForVariants.js/Sales discounts for variant -- should not be able see product               
+      variant discount not assigned to channel. TC SALEOR_1804 (failed).png                         
+
+File removed: /home/user/saleor-dashboard/cypress/videos/discounts/sales/createSalesForVariants.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  discounts/sales/updateSales.js                                                (56 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to update sales
+    ✓ should be able to delete sale. TC: SALEOR_1805 (8791ms)
+    ✓ should be able to remove variant from sale. TC: SALEOR_1806
+
+
+  2 passing (11s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_175.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     10 seconds                                                                       │
+  │ Spec Ran:     discounts/sales/updateSales.js                                                   │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/discounts/sales/updateSales.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  discounts/vouchers/createVouchers.js                                          (57 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to create voucher
+    ✓ should be able to create fixed price voucher. TC: SALEOR_1901 (5617ms)
+    ✓ should be able to create percentage voucher. TC: SALEOR_1902
+    ✓ should be able to create free shipping voucher. TC: SALEOR_1903
+    ✓ should be able to create voucher not available for selected channel. TC: SALEOR_1904
+
+
+  4 passing (18s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_176.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     18 seconds                                                                       │
+  │ Spec Ran:     discounts/vouchers/createVouchers.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/discounts/vouchers/createVouchers.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  discounts/vouchers/createVouchersWithLimits.js                                (58 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to create voucher
+    ✓ should be able to create voucher with limited number of times discount can be used in total. TC: SALEOR_1907 (6061ms)
+    ✓ should be able to create voucher with limit to one use per customer. TC: SALEOR_1908 (5593ms)
+    ✓ should be able to create voucher with limit to staff only. TC: SALEOR_1909
+    ✓ should be able to create voucher with minimum value of order. TC: SALEOR_1910
+    ✓ should create voucher with min product quantity. TC: SALEOR_1911
+
+
+  5 passing (25s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_177.json
+
+File removed: /home/user/saleor-dashboard/cypress/videos/discounts/vouchers/createVouchersWithLimits.js.mp4
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     25 seconds                                                                       │
+  │ Spec Ran:     discounts/vouchers/createVouchersWithLimits.js                                   │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  discounts/vouchers/updateVouchers.js                                          (59 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I want to update vouchers
+    ✓ should delete voucher. TC: SALEOR_1905
+    ✓ should update voucher. TC: SALEOR_1906
+    ✓ should set date on voucher. TC: SALEOR_1912
+    ✓ should set end date on voucher. TC: SALEOR_1913 (5140ms)
+    ✓ should set country on voucher. TC: SALEOR_1914
+
+
+  5 passing (18s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_178.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     18 seconds                                                                       │
+  │ Spec Ran:     discounts/vouchers/updateVouchers.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/discounts/vouchers/updateVouchers.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/manageProducts/availableForPurchaseProducts.js                       (60 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Products available in listings
+    ✓ should update product to available for purchase. TC: SALEOR_2501
+    ✓ should update product to not available for purchase. TC: SALEOR_2502
+
+
+  2 passing (8s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_179.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     8 seconds                                                                        │
+  │ Spec Ran:     products/manageProducts/availableForPurchaseProducts.js                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/manageProducts/availableForPurchaseProducts.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/manageProducts/publishedProducts.js                                  (61 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Published products
+    ✓ should update product to published
+    ✓ should update product to not published
+
+
+  2 passing (8s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_180.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     8 seconds                                                                        │
+  │ Spec Ran:     products/manageProducts/publishedProducts.js                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/manageProducts/publishedProducts.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/manageProducts/visibleInListingsProducts.js                          (62 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Products displayed in listings
+    ✓ should update product to be visible in listings. TC: SALEOR_2505
+    ✓ should update product to not be visible in listings. TC: SALEOR_2506
+
+
+  2 passing (8s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_181.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     8 seconds                                                                        │
+  │ Spec Ran:     products/manageProducts/visibleInListingsProducts.js                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/manageProducts/visibleInListingsProducts.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsList/columnPicker.js                                         (63 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I should be able to use column picker
+    ✓ should be able to add new dynamic column to grid on product list via search. TC: SALEOR_2610  should not be migrated to playwright as critical
+    - should be able to remove dynamic column from picker on products list. TC: SALEOR_2611
+    ✓ should validate: that there is always at least one active static column, use pagination when searching dynamic columns, hiding column picker works. TC: SALEOR_2612
+
+
+  2 passing (6s)
+  1 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_182.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      1                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     5 seconds                                                                        │
+  │ Spec Ran:     products/productsList/columnPicker.js                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsList/columnPicker.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsList/deleteProducts.js                                       (64 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Test for deleting products
+    ✓ should delete 2 first products on products grid view - SALEOR_2715 (10206ms)
+
+
+  1 passing (10s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_183.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     10 seconds                                                                       │
+  │ Spec Ran:     products/productsList/deleteProducts.js                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsList/deleteProducts.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsList/filteringProducts.js                                    (65 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I should be able to filter products
+    1) should filter products by Category. TC: SALEOR_2601
+    2) should filter products by Product type. TC: SALEOR_2602
+    3) should filter products by Collection. TC: SALEOR_2603
+    - should filter products out of stock. TC: SALEOR_2604
+
+
+  0 passing (3m)
+  1 pending
+  3 failing
+
+  1) As an admin I should be able to filter products
+       should filter products by Category. TC: SALEOR_2601:
+     CypressError: Timed out retrying after 20050ms: `cy.click()` failed because the center of this element is hidden from view:
+
+`<input type="text" data-test-id="right-0" aria-activedescendant="" aria-autocomplete="list" aria-controls="downshift-23-menu" aria-expanded="false" aria-labelledby="downshift-23-label" autocomplete="off" role="combobox" class="_9mn26x12 _18fs8pskr _18fs8psn6 _18fs8pspl _18fs8pss0 _18fs8ps1nu _18fs8ps1o0 _18fs8ps1ni _18fs8ps1no _18fs8ps16u _18fs8ps2jb _18fs8ps1k9 _18fs8ps1mf _18fs8ps1ou _18fs8ps29r _18fs8ps2ad _18fs8ps1kc _18fs8ps1ml" value="">`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+      at ensureIsDescendent (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139726:74)
+      at ensureDescendents (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139762:5)
+      at ensureDescendentsAndScroll (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139768:14)
+      at ensureElIsNotCovered (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139899:5)
+      at runAllChecks (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:140079:52)
+      at retryActionability (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:140116:16)
+      at tryCatcher (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:18744:23)
+      at Promise.attempt.Promise.try (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16018:29)
+      at whenStable (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:156400:65)
+      at <unknown> (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:155841:14)
+      at tryCatcher (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:18744:23)
+      at Promise._settlePromiseFromHandler (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16679:31)
+      at Promise._settlePromise (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16736:18)
+      at Promise._settlePromise0 (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16781:10)
+      at Promise._settlePromises (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16861:18)
+      at Promise._fulfill (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16805:18)
+      at <unknown> (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:18419:46)
+  From Your Spec Code:
+      at filterProductsWithNewFilters (webpack:///./cypress/support/pages/catalog/products/productsListPage.js:63:5)
+      at Context.eval (webpack:///./cypress/e2e/products/productsList/filteringProducts.js:106:37)
+
+  2) As an admin I should be able to filter products
+       should filter products by Product type. TC: SALEOR_2602:
+     CypressError: Timed out retrying after 20050ms: `cy.click()` failed because the center of this element is hidden from view:
+
+`<input type="text" data-test-id="right-0" aria-activedescendant="" aria-autocomplete="list" aria-controls="downshift-41-menu" aria-expanded="false" aria-labelledby="downshift-41-label" autocomplete="off" role="combobox" class="_9mn26x12 _18fs8pskr _18fs8psn6 _18fs8pspl _18fs8pss0 _18fs8ps1nu _18fs8ps1o0 _18fs8ps1ni _18fs8ps1no _18fs8ps16u _18fs8ps2jb _18fs8ps1k9 _18fs8ps1mf _18fs8ps1ou _18fs8ps29r _18fs8ps2ad _18fs8ps1kc _18fs8ps1ml" value="">`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+      at ensureIsDescendent (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139726:74)
+      at ensureDescendents (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139762:5)
+      at ensureDescendentsAndScroll (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139768:14)
+      at ensureElIsNotCovered (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139899:5)
+      at runAllChecks (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:140079:52)
+      at retryActionability (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:140116:16)
+      at tryCatcher (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:18744:23)
+      at Promise.attempt.Promise.try (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16018:29)
+      at whenStable (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:156400:65)
+      at <unknown> (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:155841:14)
+      at tryCatcher (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:18744:23)
+      at Promise._settlePromiseFromHandler (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16679:31)
+      at Promise._settlePromise (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16736:18)
+      at Promise._settlePromise0 (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16781:10)
+      at Promise._settlePromises (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16861:18)
+      at Promise._fulfill (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16805:18)
+      at <unknown> (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:18419:46)
+  From Your Spec Code:
+      at filterProductsWithNewFilters (webpack:///./cypress/support/pages/catalog/products/productsListPage.js:63:5)
+      at Context.eval (webpack:///./cypress/e2e/products/productsList/filteringProducts.js:106:37)
+
+  3) As an admin I should be able to filter products
+       should filter products by Collection. TC: SALEOR_2603:
+     CypressError: Timed out retrying after 20050ms: `cy.click()` failed because the center of this element is hidden from view:
+
+`<input placeholder="Add item" aria-activedescendant="" aria-autocomplete="list" aria-controls="downshift-41-menu" aria-expanded="false" aria-labelledby="downshift-41-label" autocomplete="off" role="combobox" data-test-id="right-0" class="_1g8t8xp8 _18fs8pskr _18fs8psn6 _18fs8pspl _18fs8pss0 _18fs8ps1nu _18fs8ps1o0 _18fs8ps1ni _18fs8ps1no _18fs8ps16u _18fs8ps2jb _18fs8ps1k9 _18fs8ps1mf _18fs8ps1ou _18fs8ps29r _18fs8ps2ad _18fs8ps1ku _18fs8ps1n0 _18fs8ps24l _18fs8ps1qu _18fs8ps14f _18fs8ps1af _18fs8ps25l" value="" style="flex: 1 1 0%;">`
+
+Fix this problem, or use `{force: true}` to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+      at ensureIsDescendent (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139726:74)
+      at ensureDescendents (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139762:5)
+      at ensureDescendentsAndScroll (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139768:14)
+      at ensureElIsNotCovered (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:139899:5)
+      at runAllChecks (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:140079:52)
+      at retryActionability (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:140116:16)
+      at tryCatcher (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:18744:23)
+      at Promise.attempt.Promise.try (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16018:29)
+      at whenStable (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:156400:65)
+      at <unknown> (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:155841:14)
+      at tryCatcher (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:18744:23)
+      at Promise._settlePromiseFromHandler (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16679:31)
+      at Promise._settlePromise (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16736:18)
+      at Promise._settlePromise0 (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16781:10)
+      at Promise._settlePromises (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16861:18)
+      at Promise._fulfill (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:16805:18)
+      at <unknown> (https://dashboard.domain.com/__cypress/runner/cypress_runner.js:18419:46)
+  From Your Spec Code:
+      at filterProductsWithNewFilters (webpack:///./cypress/support/pages/catalog/products/productsListPage.js:63:5)
+      at Context.eval (webpack:///./cypress/e2e/products/productsList/filteringProducts.js:106:37)
+
+
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_184.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      3                                                                                │
+  │ Pending:      1                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  9                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 minutes, 23 seconds                                                            │
+  │ Spec Ran:     products/productsList/filteringProducts.js                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/products/productsList/f     (1280x720)
+     ilteringProducts.js/As an admin I should be able to filter products -- should fi               
+     lter products by Category. TC SALEOR_2601 (failed).png                                         
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/products/productsList/f     (1280x720)
+     ilteringProducts.js/As an admin I should be able to filter products -- should fi               
+     lter products by Category. TC SALEOR_2601 (failed) (attempt 2).png                             
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/products/productsList/f     (1280x720)
+     ilteringProducts.js/As an admin I should be able to filter products -- should fi               
+     lter products by Category. TC SALEOR_2601 (failed) (attempt 3).png                             
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/products/productsList/f     (1280x720)
+     ilteringProducts.js/As an admin I should be able to filter products -- should fi               
+     lter products by Product type. TC SALEOR_2602 (failed).png                                     
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/products/productsList/f     (1280x720)
+     ilteringProducts.js/As an admin I should be able to filter products -- should fi               
+     lter products by Product type. TC SALEOR_2602 (failed) (attempt 2).png                         
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/products/productsList/f     (1280x720)
+     ilteringProducts.js/As an admin I should be able to filter products -- should fi               
+     lter products by Product type. TC SALEOR_2602 (failed) (attempt 3).png                         
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/products/productsList/f     (1280x720)
+     ilteringProducts.js/As an admin I should be able to filter products -- should fi               
+     lter products by Collection. TC SALEOR_2603 (failed).png                                       
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/products/productsList/f     (1280x720)
+     ilteringProducts.js/As an admin I should be able to filter products -- should fi               
+     lter products by Collection. TC SALEOR_2603 (failed) (attempt 2).png                           
+  -  /home/user/saleor-dashboard/cypress/reports/mochareports/products/productsList/f     (1280x720)
+     ilteringProducts.js/As an admin I should be able to filter products -- should fi               
+     lter products by Collection. TC SALEOR_2603 (failed) (attempt 3).png                           
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsList/filteringProducts.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsList/pagination.js                                           (66 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I should be able to manage products table
+    ✓ should be able go to the next page and back on product list. TC: SALEOR_2605
+    ✓ should see correct amount of products per page. TC: SALEOR_2606
+
+
+  2 passing (5s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_185.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     5 seconds                                                                        │
+  │ Spec Ran:     products/productsList/pagination.js                                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsList/pagination.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsList/productPresets.js                                       (67 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a user I should be able to save selected filters with search queries under the given name
+    ✓ should be able to add preset. TC: SALEOR_2712
+    ✓ should be able to update preset. TC: SALEOR_2713
+    ✓ should be able to delete preset. TC: SALEOR_2714
+
+
+  3 passing (9s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_186.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     8 seconds                                                                        │
+  │ Spec Ran:     products/productsList/productPresets.js                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsList/productPresets.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsList/productsView.js                                         (68 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an user I should be able switch between product views
+    ✓ should be able to switch between products view TC: SALEOR_2610
+
+
+  1 passing (2s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_187.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 second                                                                         │
+  │ Spec Ran:     products/productsList/productsView.js                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsList/productsView.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsList/sortingProducts.js                                      (69 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I should be able to sort products
+    - should be able to sort products by price. TC: SALEOR_2607
+    - should be able to sort products by type. TC: SALEOR_2608
+    - should be able to sort products by name. TC: SALEOR_2609
+
+
+  0 passing (22ms)
+  3 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_188.json
+
+Warning: We failed capturing this video.
+
+This error will not affect or change the exit code.
+
+TimeoutError: operation timed out
+    at afterTimeout (/home/user/.cache/Cypress/12.17.0/Cypress/resources/app/node_modules/bluebird/js/release/timers.js:46:19)
+    at Timeout.timeoutTimeout [as _onTimeout] (/home/user/.cache/Cypress/12.17.0/Cypress/resources/app/node_modules/bluebird/js/release/timers.js:76:13)
+    at listOnTimeout (node:internal/timers:559:17)
+    at process.processTimers (node:internal/timers:502:7)
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      3                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     products/productsList/sortingProducts.js                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsWithoutSku/createProductWithoutSku.js                        (70 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Creating variants
+    ✓ should create variant without sku TC: SALEOR_2807 (7211ms)
+    ✓ should create simple product without sku SALEOR_2808 (16121ms)
+
+
+  2 passing (23s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_189.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     23 seconds                                                                       │
+  │ Spec Ran:     products/productsWithoutSku/createProductWithoutSku.js                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsWithoutSku/createProductWithoutSku.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsWithoutSku/productsWithoutSkuInOrder.js                      (71 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As an admin I should be able to create order with variant without SKU
+    ✓ should create order with variant product without sku. SALEOR_2801
+
+
+  1 passing (1s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_190.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 second                                                                         │
+  │ Spec Ran:     products/productsWithoutSku/productsWithoutSkuInOrder.js                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsWithoutSku/productsWithoutSkuInOrder.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  products/productsWithoutSku/updatingProductsWithoutSku.js                     (72 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  Updating products without sku
+    ✓ should be able to add SKU to simple product TC: SALEOR_2802
+    ✓ should add sku to variant TC: SALEOR_2803
+    ✓ should remove sku from variant TC: SALEOR_2805
+
+
+  3 passing (8s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_191.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     7 seconds                                                                        │
+  │ Spec Ran:     products/productsWithoutSku/updatingProductsWithoutSku.js                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/products/productsWithoutSku/updatingProductsWithoutSku.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/shippingMethods/shippingWeights/shippingWeightsLimits.          (73 of 74)
+            js                                                                                      
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a staff user I want to manage shipping weights
+    ✓ should be possible to buy product in a shipping weight limits. TC: SALEOR_0902
+    ✓ should not be possible to buy product not in a shipping weight limits. TC: SALEOR_0903
+
+
+  2 passing (9s)
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_192.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     8 seconds                                                                        │
+  │ Spec Ran:     configuration/shippingMethods/shippingWeights/shippingWeightsLimits.js           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/shippingMethods/shippingWeights/shippingWeightsLimits.js.mp4
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  configuration/shippingMethods/shippingWeights/weightRecalculate.js            (74 of 74)
+Warning: The following browser launch options were provided but are not supported by electron
+
+ - args
+
+
+  As a staff user I want to change shop default weight unit
+    - should recalculate weight after changing shipping weight unit. TC: SALEOR_0901
+
+
+  0 passing (6s)
+  1 pending
+
+[mochawesome] Report JSON saved to /home/user/saleor-dashboard/cypress/reports/mocha/mochawesome_193.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      1                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     5 seconds                                                                        │
+  │ Spec Ran:     configuration/shippingMethods/shippingWeights/weightRecalculate.js               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+File removed: /home/user/saleor-dashboard/cypress/videos/configuration/shippingMethods/shippingWeights/weightRecalculate.js.mp4
+
+================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  apps.js                                  00:15        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  customerRegistration.js                  00:26        3        3        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  login.js                                 00:04        3        3        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  metadata.js                              00:01        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  staffMembers.js                          01:05        7        6        -        1        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  translations.js                          00:39        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✖  catalog/categories.js                    00:50        9        8        1        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  catalog/collections.js                   00:51        9        9        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  checkout/clickAndCollect.js              00:12        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  checkout/productWithoutShipping.js       00:01        1        1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  checkout/purchaseWithProductTypes.j      00:03        3        3        -        -        - │
+  │    s                                                                                           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  checkout/stocksInCheckout.js             00:02        3        3        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  checkout/warehouses.js                   768ms        1        1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/customer.js                01:20        8        8        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/navigation.js              00:21        4        4        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✖  configuration/permissions.js             01:10        4        1        3        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/siteSettings.js            00:09        1        1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  demo/demoDashboard.js                      9ms        2        -        -        2        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  homePage/homePage.js                     00:01        3        1        -        2        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  orders/channelsInDraftOrders.js           11ms        3        -        -        3        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  orders/draftOrders.js                    00:06        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  orders/manageStockReservation.js         00:07        4        4        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  orders/orders.js                         00:43       13       13        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  orders/transactionsForOrders.js          00:03        3        1        -        2        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  pages/pageTypes.js                       00:10        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  pages/pages.js                           01:05        9        9        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/images.js                       00:04        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsVariants.js             00:10        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/updatingProducts.js             00:15        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  catalog/giftCards/activateGiftCards      00:24        4        4        -        -        - │
+  │    .js                                                                                         │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  catalog/giftCards/createGiftCard.js      00:11        3        3        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  catalog/giftCards/exportGiftCards.j      00:25        2        2        -        -        - │
+  │    s                                                                                           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  catalog/giftCards/purchaseGiftCard.      00:01        1        1        -        -        - │
+  │    js                                                                                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  catalog/giftCards/updatingGiftCards      00:13        3        3        -        -        - │
+  │    .js                                                                                         │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/attributes/attributeV      00:14        4        4        -        -        - │
+  │    ariantSelection.js                                                                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/attributes/createCont      01:38       14       14        -        -        - │
+  │    entAttribute.js                                                                             │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/attributes/createProd      01:50       17       17        -        -        - │
+  │    uctAttributes.js                                                                            │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/attributes/deleteAndU      00:04        2        2        -        -        - │
+  │    pdateContentAttribute.js                                                                    │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/attributes/filters.js       10ms        2        -        -        2        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/channels/channels.js       00:30        7        7        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/channels/inactiveChan      00:03        3        3        -        -        - │
+  │    nel.js                                                                                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/plugins/adyen.js           750ms        6        -        -        6        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/plugins/plugins.js         00:09        2        1        -        1        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/plugins/stripe.js          731ms        4        -        -        4        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/productTypes/attribut      00:09        5        5        -        -        - │
+  │    esInProduductTypes.js                                                                       │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/productTypes/createPr      00:02        1        1        -        -        - │
+  │    oductType.js                                                                                │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/productTypes/deletePr      00:04        2        2        -        -        - │
+  │    oductType.js                                                                                │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/shippingMethods/chann      00:02        1        1        -        -        - │
+  │    elsInShipping.js                                                                            │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/shippingMethods/creat      00:17        2        2        -        -        - │
+  │    eShippingMethod.js                                                                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/shippingMethods/editS      00:05        2        2        -        -        - │
+  │    hippingMethod.js                                                                            │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/shippingMethods/editS      00:17        3        3        -        -        - │
+  │    hippingZone.js                                                                              │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/shippingMethods/posta      00:10        2        2        -        -        - │
+  │    lCodes.js                                                                                   │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/warehouses/warehouse.      00:16        5        5        -        -        - │
+  │    js                                                                                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  discounts/sales/createSalesForProdu      00:14        3        3        -        -        - │
+  │    cts.js                                                                                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  discounts/sales/createSalesForVaria      00:42        3        3        -        -        - │
+  │    nts.js                                                                                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  discounts/sales/updateSales.js           00:10        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  discounts/vouchers/createVouchers.j      00:18        4        4        -        -        - │
+  │    s                                                                                           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  discounts/vouchers/createVouchersWi      00:25        5        5        -        -        - │
+  │    thLimits.js                                                                                 │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  discounts/vouchers/updateVouchers.j      00:18        5        5        -        -        - │
+  │    s                                                                                           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/manageProducts/availableFo      00:08        2        2        -        -        - │
+  │    rPurchaseProducts.js                                                                        │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/manageProducts/publishedPr      00:08        2        2        -        -        - │
+  │    oducts.js                                                                                   │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/manageProducts/visibleInLi      00:08        2        2        -        -        - │
+  │    stingsProducts.js                                                                           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsList/columnPicker.      00:05        3        2        -        1        - │
+  │    js                                                                                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsList/deleteProduct      00:10        1        1        -        -        - │
+  │    s.js                                                                                        │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✖  products/productsList/filteringProd      03:23        4        -        3        1        - │
+  │    ucts.js                                                                                     │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsList/pagination.js      00:05        2        2        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsList/productPreset      00:08        3        3        -        -        - │
+  │    s.js                                                                                        │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsList/productsView.      00:01        1        1        -        -        - │
+  │    js                                                                                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsList/sortingProduc       12ms        3        -        -        3        - │
+  │    ts.js                                                                                       │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsWithoutSku/createP      00:23        2        2        -        -        - │
+  │    roductWithoutSku.js                                                                         │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsWithoutSku/product      00:01        1        1        -        -        - │
+  │    sWithoutSkuInOrder.js                                                                       │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  products/productsWithoutSku/updatin      00:07        3        3        -        -        - │
+  │    gProductsWithoutSku.js                                                                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/shippingMethods/shipp      00:08        2        2        -        -        - │
+  │    ingWeights/shippingWeightsLimits.js                                                         │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  configuration/shippingMethods/shipp      00:05        1        -        -        1        - │
+  │    ingWeights/weightRecalculate.js                                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✖  3 of 74 failed (4%)                      25:01      268      232        7       29        -  
+
